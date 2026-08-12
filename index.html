@@ -1705,3 +1705,111 @@ Southampton → Fulham
 Charles has signed a five-year deal with an option
 for another 12 months.
 </p>
+<p>
+© 2026 The Fulham Insider
+</p>
+
+</footer>
+
+
+<!-- =====================================================
+     BREAKING NEWS JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const breakingStories = [
+
+"Fulham remain interested in Héctor Fort as Barcelona consider his future.",
+
+"Fulham continue to monitor Abdelhamid Aït Boudlal.",
+
+"Fulham have reportedly shown interest in Ethan Nwaneri.",
+
+"Fulham are among the clubs monitoring Real Madrid forward Endrick.",
+
+"Fulham have made checks on Sporting CP winger Geny Catamo.",
+
+"Fulham continue to strengthen their squad under Álvaro Arbeloa."
+
+];
+
+
+let currentStory = 0;
+
+
+const breakingText =
+document.getElementById("breakingText");
+
+
+function showStory(index) {
+
+    currentStory =
+        (index + breakingStories.length)
+        % breakingStories.length;
+
+
+    breakingText.style.opacity = "0";
+
+
+    setTimeout(function() {
+
+        breakingText.textContent =
+            breakingStories[currentStory];
+
+        breakingText.style.opacity = "1";
+
+    }, 250);
+
+}
+
+
+function nextStory() {
+
+    showStory(currentStory + 1);
+
+}
+
+
+function previousStory() {
+
+    showStory(currentStory - 1);
+
+}
+
+
+/* =====================================================
+   HOME BUTTON FIX
+===================================================== */
+
+function goHome(event) {
+
+    event.preventDefault();
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* Automatically change breaking story */
+
+setInterval(
+    nextStory,
+    5000
+);
+
+
+showStory(0);
+
+</script>
+
+
+</body>
+
+</html>
