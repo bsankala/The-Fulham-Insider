@@ -7,6 +7,7 @@
 <title>The Fulham Insider | Fulham Transfer News</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,7 +16,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 125px;
+    scroll-padding-top: 120px;
 }
 
 body {
@@ -25,8 +26,8 @@ body {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 /* HEADER */
@@ -35,7 +36,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: white;
+    background: #fff;
     border-bottom: 4px solid #d00000;
 }
 
@@ -75,11 +76,11 @@ nav a:hover {
     color: #d00000;
 }
 
-/* BREAKING BAR */
+/* BREAKING NEWS */
 
 .breaking {
     background: #111;
-    color: white;
+    color: #fff;
 }
 
 .breaking-inner {
@@ -94,6 +95,7 @@ nav a:hover {
 .breaking-label {
     background: #d00000;
     padding: 15px 20px;
+
     font-size: 11px;
     font-weight: 900;
 }
@@ -101,6 +103,7 @@ nav a:hover {
 .breaking-story {
     flex: 1;
     padding: 0 20px;
+
     font-size: 13px;
     font-weight: 700;
 }
@@ -114,10 +117,13 @@ nav a:hover {
 .breaking-buttons button {
     width: 32px;
     height: 32px;
+
     border: 1px solid #444;
     border-radius: 50%;
+
     background: #222;
-    color: white;
+    color: #fff;
+
     cursor: pointer;
 }
 
@@ -133,14 +139,25 @@ main {
     padding: 35px 20px 70px;
 }
 
-section {
-    scroll-margin-top: 125px;
+.section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    padding-left: 12px;
+
+    border-left: 5px solid #d00000;
+
+    font-size: 25px;
+    font-weight: 900;
 }
 
 /* HERO */
 
 .hero {
     min-height: 440px;
+
     margin-bottom: 45px;
     padding: 55px;
 
@@ -150,21 +167,23 @@ section {
     border: 1px solid #ddd;
     border-radius: 14px;
 
-    background: linear-gradient(
-        110deg,
-        white,
-        #f7f7f7 65%,
-        #eeeeee
-    );
+    background:
+        linear-gradient(
+            110deg,
+            #fff,
+            #f7f7f7 65%,
+            #eee
+        );
 }
 
 .tag {
     display: inline-block;
+
     padding: 7px 12px;
     margin-bottom: 17px;
 
     background: #d00000;
-    color: white;
+    color: #fff;
 
     border-radius: 4px;
 
@@ -183,38 +202,25 @@ section {
 
     font-size: clamp(38px, 5vw, 60px);
     line-height: 1;
-    letter-spacing: -2px;
 
+    letter-spacing: -2px;
     margin-bottom: 18px;
 }
 
 .hero p {
     max-width: 680px;
+
     color: #555;
     font-size: 16px;
 }
 
 .meta {
     margin-top: 20px;
+
     color: #999;
+
     font-size: 10px;
     font-weight: 800;
-}
-
-/* SECTION */
-
-.section {
-    margin-bottom: 50px;
-}
-
-.section-title {
-    margin-bottom: 20px;
-    padding-left: 12px;
-
-    border-left: 5px solid #d00000;
-
-    font-size: 25px;
-    font-weight: 900;
 }
 
 /* NEWS */
@@ -226,14 +232,24 @@ section {
 }
 
 .card {
-    background: white;
+    background: #fff;
+
     border: 1px solid #e5e5e5;
     border-radius: 10px;
+
     overflow: hidden;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 .card:hover {
-    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.08);
 }
 
 .player-name-box {
@@ -273,6 +289,7 @@ section {
 
 .card h3 {
     margin-bottom: 10px;
+
     font-size: 19px;
     line-height: 1.2;
 }
@@ -286,12 +303,71 @@ section {
     font-size: 13px;
 }
 
+/* READ BUTTON */
+
+.read-button {
+    display: inline-block;
+
+    margin-top: 18px;
+    padding: 10px 14px;
+
+    background: #111;
+    color: #fff;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.read-button:hover {
+    background: #d00000;
+}
+
+/* TRACKER */
+
+.tracker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.tracker-card {
+    padding: 20px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.tracker-number {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.tracker-label {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
 /* TRANSFERS */
 
 .transfer-box {
     overflow: hidden;
 
-    background: white;
+    background: #fff;
 
     border: 1px solid #ddd;
     border-radius: 12px;
@@ -300,7 +376,10 @@ section {
 .transfer-header,
 .transfer {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.2fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1.2fr 1fr 1fr;
+
     gap: 15px;
     align-items: center;
 }
@@ -309,7 +388,7 @@ section {
     padding: 16px 20px;
 
     background: #111;
-    color: white;
+    color: #fff;
 
     font-size: 10px;
     font-weight: 900;
@@ -330,7 +409,9 @@ section {
 
 .club {
     margin-top: 2px;
+
     color: #777;
+
     font-size: 11px;
 }
 
@@ -338,6 +419,20 @@ section {
     color: #555;
     font-size: 12px;
 }
+
+.fee {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.source {
+    color: #777;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* STATUS */
 
 .status {
     display: inline-block;
@@ -362,57 +457,78 @@ section {
     color: #a34b00;
 }
 
-.developing {
-    background: #fff0c4;
-    color: #805c00;
-}
-
 .rumour {
     background: #eee;
     color: #555;
 }
 
-.source {
-    color: #777;
-    font-size: 10px;
-    font-weight: 700;
-}
-
 /* CONFIRMED */
 
-.confirmed-grid,
-.rumour-grid {
+.confirmed-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 20px;
 }
 
-.confirmed-card,
-.rumour-card {
-    position: relative;
-
+.confirmed-card {
     padding: 24px;
 
-    background: white;
+    background: #fff;
+
+    border: 1px solid #e5e5e5;
+    border-left: 5px solid #008a3e;
+
+    border-radius: 10px;
+}
+
+.confirmed-card h3 {
+    margin: 13px 0 6px;
+
+    font-size: 21px;
+}
+
+.confirmed-card p {
+    margin-bottom: 14px;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+/* RUMOURS */
+
+.rumour-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.rumour-card {
+    padding: 24px;
+
+    background: #fff;
 
     border: 1px solid #e5e5e5;
     border-radius: 10px;
 }
 
-.confirmed-card {
-    border-left: 5px solid #008a3e;
-}
-
-.confirmed-card h3,
 .rumour-card h3 {
     margin: 13px 0 6px;
+
     font-size: 21px;
 }
 
-.confirmed-card p,
 .rumour-card p {
     margin-bottom: 14px;
+
     color: #666;
+
     font-size: 13px;
 }
 
@@ -420,14 +536,17 @@ section {
 
 .trust {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 20px;
 
     margin-bottom: 50px;
     padding: 30px;
 
     background: #111;
-    color: white;
+    color: #fff;
 
     border-radius: 12px;
 }
@@ -451,13 +570,201 @@ section {
     font-size: 11px;
 }
 
+/* ARTICLE OVERLAY */
+
+.article-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+    overflow-y: auto;
+
+    background: #f5f5f5;
+}
+
+.article-overlay.active {
+    display: block;
+}
+
+.article-top {
+    background: #fff;
+
+    border-bottom: 4px solid #d00000;
+}
+
+.article-top-inner {
+    max-width: 1000px;
+
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-logo {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.article-logo span {
+    color: #d00000;
+}
+
+.close-article {
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.close-article:hover {
+    background: #d00000;
+}
+
+.article-container {
+    max-width: 900px;
+
+    margin: 40px auto 80px;
+
+    padding: 0 20px;
+}
+
+.article-tag {
+    display: inline-block;
+
+    margin-bottom: 15px;
+    padding: 7px 12px;
+
+    background: #d00000;
+    color: #fff;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.article-container h1 {
+    font-size: clamp(35px, 6vw, 60px);
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+}
+
+.article-subtitle {
+    color: #666;
+
+    font-size: 17px;
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+.article-info {
+    padding: 18px;
+
+    margin-bottom: 30px;
+
+    background: #fff;
+
+    border-left: 5px solid #d00000;
+    border-radius: 6px;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.article-body {
+    background: #fff;
+
+    padding: 35px;
+
+    border-radius: 10px;
+}
+
+.article-body h2 {
+    margin: 30px 0 12px;
+
+    font-size: 24px;
+}
+
+.article-body h2:first-child {
+    margin-top: 0;
+}
+
+.article-body p {
+    margin-bottom: 17px;
+
+    color: #333;
+
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.source-box {
+    margin-top: 35px;
+    padding: 22px;
+
+    background: #f1f1f1;
+
+    border-radius: 8px;
+}
+
+.source-box strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+}
+
+.source-box p {
+    margin-bottom: 6px;
+
+    font-size: 12px;
+}
+
+.article-back {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 13px 18px;
+
+    background: #111;
+    color: #fff;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.article-back:hover {
+    background: #d00000;
+}
+
 /* FOOTER */
 
 footer {
     padding: 45px 20px;
 
     background: #111;
-    color: white;
+    color: #fff;
 
     text-align: center;
 }
@@ -473,17 +780,48 @@ footer {
 
 footer p {
     margin-top: 7px;
+
     color: #999;
+
     font-size: 11px;
 }
 
 /* MOBILE */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+
+    .transfer-header {
+        display: none;
+    }
+
+    .transfer {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .news-grid,
+    .confirmed-grid,
+    .rumour-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tracker {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .trust {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
 
     .header {
         flex-direction: column;
+
         align-items: flex-start;
+
         padding: 18px 20px;
     }
 
@@ -493,33 +831,13 @@ footer p {
         gap: 18px;
     }
 
-    .news-grid,
-    .confirmed-grid,
-    .rumour-grid {
-        grid-template-columns: 1fr;
+    .hero {
+        min-height: 420px;
+        padding: 30px 25px;
     }
 
-    .transfer-header {
-        display: none;
-    }
-
-    .transfer {
-        grid-template-columns: 1fr;
-    }
-
-    .trust {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-
-    main {
-        padding: 20px 14px 50px;
-    }
-
-    .logo {
-        font-size: 23px;
+    .hero h1 {
+        font-size: 36px;
     }
 
     .breaking-inner {
@@ -535,25 +853,36 @@ footer p {
         padding: 12px;
     }
 
-    .hero {
-        min-height: 420px;
-        padding: 30px 25px;
+    .tracker {
+        grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .article-body {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    main {
+        padding: 20px 14px 50px;
+    }
+
+    .logo {
+        font-size: 23px;
     }
 
     .section-title {
         font-size: 21px;
     }
-
 }
+
 </style>
 </head>
 
 
 <body>
+
 
 <header>
 
@@ -564,11 +893,13 @@ THE FULHAM <span>INSIDER</span>
 </a>
 
 <nav>
+
 <a href="#home">HOME</a>
 <a href="#transfers">TRANSFERS</a>
 <a href="#rumours">RUMOURS</a>
 <a href="#confirmed">CONFIRMED</a>
 <a href="#news">NEWS</a>
+
 </nav>
 
 </div>
@@ -585,15 +916,16 @@ THE FULHAM <span>INSIDER</span>
 </div>
 
 <div class="breaking-story">
+
 <span id="breakingText">
-Fulham continue to monitor several targets.
+Shea Charles has officially joined Fulham.
 </span>
+
 </div>
 
 <div class="breaking-buttons">
 
 <button onclick="previousStory()">‹</button>
-
 <button onclick="nextStory()">›</button>
 
 </div>
@@ -619,16 +951,15 @@ FULHAM FC
 </div>
 
 <h1>
-Fulham continue to strengthen under Álvaro Arbeloa
+The latest Fulham transfer news, rumours and confirmed deals.
 </h1>
 
 <p>
-The Whites have already completed several major deals
-and remain active in the transfer market.
+Welcome to The Fulham Insider — your home for Fulham transfer updates and Fulham news.
 </p>
 
 <div class="meta">
-THE FULHAM INSIDER • 12 AUG 2026
+LAST UPDATED: 12 AUGUST 2026
 </div>
 
 </div>
@@ -636,46 +967,19 @@ THE FULHAM INSIDER • 12 AUG 2026
 </section>
 
 
+<!-- BIG NEWS -->
+
 <section class="section" id="news">
 
 <h2 class="section-title">
 Latest Fulham News
 </h2>
 
+
 <div class="news-grid">
 
 
 <article class="card big-card">
-
-<div class="player-name-box">
-FULHAM FC
-</div>
-
-<div class="card-content">
-
-<div class="category">
-TRANSFER CENTRE
-</div>
-
-<h3>
-Fulham continue to strengthen under Álvaro Arbeloa
-</h3>
-
-<p>
-The Whites have already completed several major deals
-and remain active in the transfer market.
-</p>
-
-<div class="meta">
-THE FULHAM INSIDER • 12 AUG 2026
-</div>
-
-</div>
-
-</article>
-
-
-<article class="card">
 
 <div class="player-name-box">
 SHEA CHARLES
@@ -684,21 +988,27 @@ SHEA CHARLES
 <div class="card-content">
 
 <div class="category">
-CONFIRMED
+🟢 CONFIRMED
 </div>
 
 <h3>
-Shea Charles joins Fulham
+Shea Charles joins Fulham from Southampton
 </h3>
 
 <p>
-The midfielder has joined from Southampton
-on a five-year contract.
+Fulham have completed the signing of Northern Ireland midfielder Shea Charles.
 </p>
 
 <div class="meta">
-SOURCE: FABRIZIO ROMANO
+11 AUGUST 2026 • FULHAM FC
 </div>
+
+<button
+class="read-button"
+onclick="openArticle('shea')"
+>
+READ FULL STORY →
+</button>
 
 </div>
 
@@ -708,27 +1018,61 @@ SOURCE: FABRIZIO ROMANO
 <article class="card">
 
 <div class="player-name-box">
-HÉCTOR FORT
+GONZALO GARCÍA
 </div>
 
 <div class="card-content">
 
 <div class="category">
-INTEREST
+🟢 CONFIRMED
 </div>
 
 <h3>
-Fulham interested in Héctor Fort
+Gonzalo García arrives from Real Madrid
 </h3>
 
 <p>
-The Barcelona full-back is reportedly attracting
-strong interest from Fulham.
+The forward has joined Fulham on a five-year contract.
 </p>
 
-<div class="meta">
-SOURCE: 90MIN
+<button
+class="read-button"
+onclick="openArticle('gonzalo')"
+>
+READ FULL STORY →
+</button>
+
 </div>
+
+</article>
+
+
+<article class="card">
+
+<div class="player-name-box">
+CÉSAR PALACIOS
+</div>
+
+<div class="card-content">
+
+<div class="category">
+🟢 CONFIRMED
+</div>
+
+<h3>
+César Palacios joins from Real Madrid
+</h3>
+
+<p>
+Another Real Madrid youngster has arrived at Craven Cottage.
+</p>
+
+<button
+class="read-button"
+onclick="openArticle('palacios')"
+>
+READ FULL STORY →
+</button>
 
 </div>
 
@@ -740,162 +1084,180 @@ SOURCE: 90MIN
 </section>
 
 
+<!-- TRANSFER TRACKER -->
+
 <section class="section" id="transfers">
 
 <h2 class="section-title">
-🔄 Transfer Centre
+🔄 Fulham Transfer Tracker
 </h2>
+
+<div class="tracker">
+
+<div class="tracker-card">
+<div class="tracker-number">3</div>
+<div class="tracker-label">CONFIRMED</div>
+</div>
+
+<div class="tracker-card">
+<div class="tracker-number">0</div>
+<div class="tracker-label">VERY STRONG</div>
+</div>
+
+<div class="tracker-card">
+<div class="tracker-number">6</div>
+<div class="tracker-label">INTEREST</div>
+</div>
+
+<div class="tracker-card">
+<div class="tracker-number">1</div>
+<div class="tracker-label">RUMOURS</div>
+</div>
+
+</div>
+
 
 <div class="transfer-box">
 
+
 <div class="transfer-header">
+
 <div>PLAYER</div>
 <div>POSITION</div>
 <div>STATUS</div>
-<div>ORIGINAL SOURCE</div>
+<div>FEE</div>
+<div>SOURCE</div>
+
 </div>
 
 
 <div class="transfer">
+
 <div>
 <div class="player">Shea Charles</div>
 <div class="club">Southampton → Fulham</div>
 </div>
+
 <div class="position">Midfielder</div>
-<div><span class="status confirmed">CONFIRMED</span></div>
-<div class="source">Fabrizio Romano</div>
+
+<div>
+<span class="status confirmed">
+CONFIRMED
+</span>
+</div>
+
+<div class="fee">
+Up to £30m
+</div>
+
+<div class="source">
+Fulham FC / Reuters
+</div>
+
 </div>
 
 
 <div class="transfer">
+
 <div>
 <div class="player">Gonzalo García</div>
 <div class="club">Real Madrid → Fulham</div>
 </div>
+
 <div class="position">Forward</div>
-<div><span class="status confirmed">CONFIRMED</span></div>
-<div class="source">Fulham FC</div>
+
+<div>
+<span class="status confirmed">
+CONFIRMED
+</span>
+</div>
+
+<div class="fee">
+Reported fee
+</div>
+
+<div class="source">
+Fulham FC
+</div>
+
 </div>
 
 
 <div class="transfer">
+
 <div>
 <div class="player">César Palacios</div>
 <div class="club">Real Madrid → Fulham</div>
 </div>
+
 <div class="position">Midfielder</div>
-<div><span class="status confirmed">CONFIRMED</span></div>
-<div class="source">Fulham FC</div>
+
+<div>
+<span class="status confirmed">
+CONFIRMED
+</span>
+</div>
+
+<div class="fee">
+Reported fee
+</div>
+
+<div class="source">
+Fulham FC
+</div>
+
 </div>
 
 
 <div class="transfer">
+
 <div>
 <div class="player">Wataru Endo</div>
 <div class="club">Liverpool → Fulham</div>
 </div>
+
 <div class="position">Midfielder</div>
-<div><span class="status rumour">RUMOUR</span></div>
-<div class="source">TransferFeed</div>
+
+<div>
+<span class="status rumour">
+RUMOUR
+</span>
+</div>
+
+<div class="fee">
+TBC
+</div>
+
+<div class="source">
+TransferFeed
+</div>
+
 </div>
 
 
 <div class="transfer">
+
 <div>
 <div class="player">Héctor Fort</div>
 <div class="club">Barcelona → Fulham</div>
 </div>
+
 <div class="position">Full-back</div>
-<div><span class="status interest">INTEREST</span></div>
-<div class="source">90min</div>
-</div>
 
-
-<div class="transfer">
 <div>
-<div class="player">Abdelhamid Aït Boudlal</div>
-<div class="club">Rennes → Fulham</div>
-</div>
-<div class="position">Centre-back</div>
-<div><span class="status developing">DEVELOPING</span></div>
-<div class="source">TransferFeed</div>
+<span class="status interest">
+INTEREST
+</span>
 </div>
 
-
-<div class="transfer">
-<div>
-<div class="player">Jordan James</div>
-<div class="club">Rennes → Fulham</div>
-</div>
-<div class="position">Midfielder</div>
-<div><span class="status interest">INTEREST</span></div>
-<div class="source">TransferFeed</div>
+<div class="fee">
+TBC
 </div>
 
-
-<div class="transfer">
-<div>
-<div class="player">Endrick</div>
-<div class="club">Real Madrid → Fulham</div>
-</div>
-<div class="position">Forward</div>
-<div><span class="status interest">INTEREST</span></div>
-<div class="source">TEAMtalk</div>
+<div class="source">
+90min
 </div>
 
-
-<div class="transfer">
-<div>
-<div class="player">Ethan Nwaneri</div>
-<div class="club">Arsenal → Fulham</div>
-</div>
-<div class="position">Midfielder</div>
-<div><span class="status developing">DEVELOPING</span></div>
-<div class="source">TransferFeed</div>
-</div>
-
-
-<div class="transfer">
-<div>
-<div class="player">Geny Catamo</div>
-<div class="club">Sporting CP → Fulham</div>
-</div>
-<div class="position">Winger</div>
-<div><span class="status interest">INTEREST</span></div>
-<div class="source">TEAMtalk</div>
-</div>
-
-
-<div class="transfer">
-<div>
-<div class="player">Alistair Johnston</div>
-<div class="club">Celtic → Fulham</div>
-</div>
-<div class="position">Full-back</div>
-<div><span class="status developing">DEVELOPING</span></div>
-<div class="source">TransferFeed</div>
-</div>
-
-
-<div class="transfer">
-<div>
-<div class="player">Reiss Nelson</div>
-<div class="club">Arsenal → Fulham</div>
-</div>
-<div class="position">Winger</div>
-<div><span class="status interest">INTEREST</span></div>
-<div class="source">TransferFeed</div>
-</div>
-
-
-<div class="transfer">
-<div>
-<div class="player">Nestory Irankunda</div>
-<div class="club">Watford → Fulham</div>
-</div>
-<div class="position">Winger</div>
-<div><span class="status interest">INTEREST</span></div>
-<div class="source">TransferFeed</div>
 </div>
 
 
@@ -904,13 +1266,48 @@ SOURCE: 90MIN
 </section>
 
 
+<!-- CONFIRMED -->
+
 <section class="section" id="confirmed">
 
 <h2 class="section-title">
 🟢 Confirmed Transfers
 </h2>
 
+
 <div class="confirmed-grid">
+
+
+<div class="confirmed-card">
+
+<div class="player-name-box">
+SHEA CHARLES
+</div>
+
+<h3>
+Shea Charles
+</h3>
+
+<div class="club">
+Southampton → Fulham
+</div>
+
+<p>
+Five-year contract with an option to extend by a further 12 months.
+</p>
+
+<div class="meta">
+11 AUGUST 2026
+</div>
+
+<button
+class="read-button"
+onclick="openArticle('shea')"
+>
+READ FULL STORY →
+</button>
+
+</div>
 
 
 <div class="confirmed-card">
@@ -928,13 +1325,19 @@ Real Madrid → Fulham
 </div>
 
 <p>
-The Spanish forward has joined Fulham
-on a long-term contract.
+Gonzalo has joined Fulham on a five-year contract.
 </p>
 
 <div class="meta">
-SOURCE: FULHAM FC
+3 AUGUST 2026
 </div>
+
+<button
+class="read-button"
+onclick="openArticle('gonzalo')"
+>
+READ FULL STORY →
+</button>
 
 </div>
 
@@ -954,39 +1357,19 @@ Real Madrid → Fulham
 </div>
 
 <p>
-The midfielder has joined Fulham from Real Madrid
-on a long-term deal.
+Palacios has joined Fulham on a five-year contract.
 </p>
 
 <div class="meta">
-SOURCE: FULHAM FC
+3 AUGUST 2026
 </div>
 
-</div>
-
-
-<div class="confirmed-card">
-
-<div class="player-name-box">
-SHEA CHARLES
-</div>
-
-<h3>
-Shea Charles
-</h3>
-
-<div class="club">
-Southampton → Fulham
-</div>
-
-<p>
-Charles has signed a five-year deal with an option
-for another 12 months.
-</p>
-
-<div class="meta">
-SOURCE: FABRIZIO ROMANO
-</div>
+<button
+class="read-button"
+onclick="openArticle('palacios')"
+>
+READ FULL STORY →
+</button>
 
 </div>
 
@@ -996,11 +1379,14 @@ SOURCE: FABRIZIO ROMANO
 </section>
 
 
+<!-- RUMOURS -->
+
 <section class="section" id="rumours">
 
 <h2 class="section-title">
 👀 Rumour Watch
 </h2>
+
 
 <div class="rumour-grid">
 
@@ -1016,8 +1402,7 @@ Wataru Endo
 </h3>
 
 <p>
-Liverpool could reportedly offer the midfielder
-to clubs including Fulham and West Ham.
+Liverpool are reportedly prepared to offer the midfielder to Fulham and West Ham.
 </p>
 
 <div class="source">
@@ -1038,8 +1423,7 @@ Héctor Fort
 </h3>
 
 <p>
-Fort is reportedly unsettled at Barcelona while
-Fulham are among the clubs interested.
+Fulham are among the clubs reportedly interested in the Barcelona full-back.
 </p>
 
 <div class="source">
@@ -1051,8 +1435,8 @@ SOURCE: 90MIN
 
 <div class="rumour-card">
 
-<span class="status developing">
-DEVELOPING
+<span class="status interest">
+INTEREST
 </span>
 
 <h3>
@@ -1060,78 +1444,11 @@ Abdelhamid Aït Boudlal
 </h3>
 
 <p>
-Fulham remain interested in the Rennes defender
-following previous discussions.
+Fulham have been linked with the Rennes defender.
 </p>
 
 <div class="source">
-SOURCE: TRANSFERFEED
-</div>
-
-</div>
-
-
-<div class="rumour-card">
-
-<span class="status developing">
-DEVELOPING
-</span>
-
-<h3>
-Ethan Nwaneri
-</h3>
-
-<p>
-Fulham have been linked with a potential move
-for the Arsenal midfielder.
-</p>
-
-<div class="source">
-SOURCE: TRANSFERFEED
-</div>
-
-</div>
-
-
-<div class="rumour-card">
-
-<span class="status interest">
-INTEREST
-</span>
-
-<h3>
-Endrick
-</h3>
-
-<p>
-Fulham are among the clubs reported to have spoken
-with representatives regarding the Real Madrid forward.
-</p>
-
-<div class="source">
-SOURCE: TEAMtalk
-</div>
-
-</div>
-
-
-<div class="rumour-card">
-
-<span class="status interest">
-INTEREST
-</span>
-
-<h3>
-Geny Catamo
-</h3>
-
-<p>
-Fulham have reportedly made checks on Sporting CP
-winger Geny Catamo.
-</p>
-
-<div class="source">
-SOURCE: TEAMtalk
+SOURCE: SKY SPORTS
 </div>
 
 </div>
@@ -1146,14 +1463,16 @@ SOURCE: TEAMtalk
 
 <div class="trust-item">
 
-<div class="trust-icon">🚨</div>
+<div class="trust-icon">
+🚨
+</div>
 
 <h3>
 Breaking News
 </h3>
 
 <p>
-Major Fulham developments highlighted at the top.
+Major Fulham developments appear at the top of the website.
 </p>
 
 </div>
@@ -1161,14 +1480,16 @@ Major Fulham developments highlighted at the top.
 
 <div class="trust-item">
 
-<div class="trust-icon">🔎</div>
+<div class="trust-icon">
+🔎
+</div>
 
 <h3>
 Original Sources
 </h3>
 
 <p>
-Stories are labelled with their original source.
+Stories identify the original source of the information.
 </p>
 
 </div>
@@ -1176,19 +1497,22 @@ Stories are labelled with their original source.
 
 <div class="trust-item">
 
-<div class="trust-icon">⚖️</div>
+<div class="trust-icon">
+⚖️
+</div>
 
 <h3>
 Rumours ≠ Facts
 </h3>
 
 <p>
-Reported interest is separated from confirmed deals.
+Reported interest is always separated from confirmed transfers.
 </p>
 
 </div>
 
 </section>
+
 
 </main>
 
@@ -1204,7 +1528,7 @@ Independent Fulham FC fan media.
 </p>
 
 <p>
-Transfer rumours remain rumours until officially confirmed.
+Rumours remain rumours until officially confirmed.
 </p>
 
 <p>
@@ -1214,57 +1538,116 @@ Transfer rumours remain rumours until officially confirmed.
 </footer>
 
 
+<!-- ARTICLE SYSTEM -->
+
+<div
+id="articleOverlay"
+class="article-overlay"
+>
+
+<div class="article-top">
+
+<div class="article-top-inner">
+
+<div class="article-logo">
+THE FULHAM <span>INSIDER</span>
+</div>
+
+<button
+class="close-article"
+onclick="closeArticle()"
+>
+✕ CLOSE STORY
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="articleContainer"
+class="article-container"
+>
+</div>
+
+</div>
+
+
 <script>
 
+
+/* BREAKING NEWS */
+
 const stories = [
-    "Fulham remain interested in Héctor Fort as Barcelona consider his future.",
-    "Fulham continue to monitor Abdelhamid Aït Boudlal.",
-    "Fulham have reportedly shown interest in Ethan Nwaneri.",
-    "Fulham are among the clubs monitoring Real Madrid forward Endrick.",
-    "Fulham have made checks on Sporting CP winger Geny Catamo.",
-    "Fulham continue to strengthen their squad under Álvaro Arbeloa.",
-    "Shea Charles has officially joined Fulham on a long-term deal."
+
+"Shea Charles has officially joined Fulham from Southampton.",
+
+"Gonzalo García has joined Fulham from Real Madrid.",
+
+"César Palacios has joined Fulham from Real Madrid.",
+
+"Fulham continue to strengthen the squad under Álvaro Arbeloa.",
+
+"Héctor Fort remains a reported Fulham target.",
+
+"Fulham continue to monitor the transfer market."
+
 ];
 
 let storyIndex = 0;
 
-const breakingText =
-    document.getElementById("breakingText");
 
 function showStory(index) {
 
-    storyIndex =
-        (index + stories.length) % stories.length;
+storyIndex =
+(index + stories.length)
+% stories.length;
 
-    breakingText.style.opacity = "0";
+document.getElementById(
+"breakingText"
+).textContent =
+stories[storyIndex];
 
-    setTimeout(function() {
-
-        breakingText.textContent =
-            stories[storyIndex];
-
-        breakingText.style.opacity = "1";
-
-    }, 200);
 }
+
 
 function nextStory() {
-    showStory(storyIndex + 1);
+
+showStory(
+storyIndex + 1
+);
+
 }
+
 
 function previousStory() {
-    showStory(storyIndex - 1);
+
+showStory(
+storyIndex - 1
+);
+
 }
 
-setInterval(function() {
-    nextStory();
-}, 5000);
 
-showStory(0);
+setInterval(
+function() {
+nextStory();
+},
+5000
+);
+
+/* CLOUDflare WEB ANALYTICS */
 
 </script>
 
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e0a63b79e8264f1b863b1dd9b7192006"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token": "e0a63b79e8264f1b863b1dd9b7192006"}'
+></script>
+<!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
