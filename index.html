@@ -1314,18 +1314,20 @@ history.pushState(
 }
 
 
-function closeArticle(){
+function closeArticle() {
 
-document.getElementById("articleOverlay")
-.classList.add("active");
+  document.getElementById("articleOverlay")
+    .classList.remove("active");
 
-document.body.style.overflow = "hidden";
+  document.body.style.overflow = "auto";
 
-history.pushState(
-  { article: id },
-  "",
-  "#story-" + id
-);
+  if (location.hash.startsWith("#story-")) {
+    history.pushState(
+      {},
+      "",
+      location.pathname + location.search
+    );
+  }
 
 }
 
