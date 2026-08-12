@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>The Fulham Insider | Fulham Transfer News</title>
 
@@ -15,7 +12,7 @@ content="The Fulham Insider - Fulham FC transfer news, rumours, confirmed deals 
 <style>
 
 /* =====================================================
-   GLOBAL
+   THE FULHAM INSIDER — V3.2
 ===================================================== */
 
 * {
@@ -29,15 +26,9 @@ html {
 }
 
 body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     background: #f5f5f5;
-
     color: #111;
-
     line-height: 1.5;
 }
 
@@ -52,73 +43,48 @@ a {
 ===================================================== */
 
 header {
-
     background: white;
-
-    border-bottom:
-        4px solid #d00000;
-
+    border-bottom: 4px solid #d00000;
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 }
 
 .header-container {
-
     max-width: 1250px;
-
     margin: auto;
-
     min-height: 78px;
-
-    padding:
-        0 20px;
+    padding: 0 20px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 25px;
 }
 
 .logo {
-
     font-size: 28px;
-
     font-weight: 900;
-
     letter-spacing: -1.5px;
-
     white-space: nowrap;
 }
 
 .logo span {
-
     color: #d00000;
 }
 
 nav {
-
     display: flex;
-
     gap: 22px;
-
     align-items: center;
 }
 
 nav a {
-
     font-size: 13px;
-
     font-weight: 800;
 }
 
 nav a:hover {
-
     color: #d00000;
 }
 
@@ -128,86 +94,59 @@ nav a:hover {
 ===================================================== */
 
 .breaking-bar {
-
     background: #111;
-
     color: white;
 }
 
 .breaking-container {
-
     max-width: 1250px;
-
     margin: auto;
-
     min-height: 52px;
 
     display: flex;
-
     align-items: center;
 }
 
 .breaking-label {
-
     background: #d00000;
-
-    padding:
-        15px 20px;
+    padding: 15px 20px;
 
     font-size: 12px;
-
     font-weight: 900;
-
     white-space: nowrap;
 }
 
 .breaking-story {
-
     flex: 1;
-
-    padding:
-        0 20px;
+    padding: 0 20px;
 
     font-size: 13px;
-
     font-weight: 700;
 }
 
 #breakingText {
-
-    transition:
-        opacity .25s;
+    transition: opacity .25s;
 }
 
 .breaking-buttons {
-
     display: flex;
-
     gap: 5px;
-
     padding-right: 15px;
 }
 
 .breaking-buttons button {
-
     width: 32px;
-
     height: 32px;
 
-    border:
-        1px solid #444;
-
+    border: 1px solid #444;
     background: #222;
-
     color: white;
 
     border-radius: 50%;
-
     cursor: pointer;
 }
 
 .breaking-buttons button:hover {
-
     background: #d00000;
 }
 
@@ -217,140 +156,93 @@ nav a:hover {
 ===================================================== */
 
 main {
-
     max-width: 1250px;
-
     margin: auto;
-
-    padding:
-        35px 20px 70px;
+    padding: 35px 20px 70px;
 }
 
 
 /* =====================================================
-   HERO / FEATURED STORY
+   FEATURED STORY
 ===================================================== */
 
 .hero {
-
     min-height: 450px;
 
     border-radius: 14px;
-
     overflow: hidden;
 
     position: relative;
-
     margin-bottom: 45px;
 
     display: flex;
-
     align-items: flex-end;
 
     background:
         linear-gradient(
             110deg,
-            #050505,
-            #181818 65%,
-            #350000
+            #ffffff,
+            #f7f7f7 65%,
+            #eeeeee
         );
-}
 
-/*
-The background image is controlled in the
-EDIT YOUR NEWS section near the bottom.
-*/
-
-.hero-image {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    opacity: .48;
-}
-
-.hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            0deg,
-            rgba(0,0,0,.92),
-            rgba(0,0,0,.15)
-        );
+    border: 1px solid #ddd;
 }
 
 .hero-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    color: white;
-
-    padding: 50px;
-
-    max-width: 850px;
+    padding: 55px;
+    max-width: 900px;
 }
 
 .hero-tag {
-
     display: inline-block;
 
     background: #d00000;
-
     color: white;
 
-    padding:
-        7px 12px;
+    padding: 7px 12px;
 
     border-radius: 4px;
 
     font-size: 10px;
-
     font-weight: 900;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+}
+
+.hero-player {
+    font-size: 14px;
+    font-weight: 900;
+    color: #111;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
 }
 
 .hero h1 {
-
-    font-size:
-        clamp(35px,5vw,60px);
+    font-size: clamp(35px, 5vw, 60px);
 
     line-height: 1;
-
     letter-spacing: -2px;
 
     margin-bottom: 18px;
 }
 
 .hero p {
-
     max-width: 680px;
 
-    color: #ddd;
+    color: #555;
 
     font-size: 16px;
 }
 
 .hero-meta {
-
     margin-top: 22px;
 
     font-size: 11px;
 
-    color: #bbb;
+    color: #888;
 
     font-weight: 800;
 }
@@ -361,36 +253,27 @@ EDIT YOUR NEWS section near the bottom.
 ===================================================== */
 
 .section {
-
     margin-bottom: 50px;
 }
 
 .section-heading {
-
     display: flex;
-
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     align-items: center;
 
     margin-bottom: 20px;
 }
 
 .section-title {
-
     font-size: 25px;
-
     font-weight: 900;
 
-    border-left:
-        5px solid #d00000;
+    border-left: 5px solid #d00000;
 
     padding-left: 12px;
 }
 
 .section-label {
-
     color: #d00000;
 
     font-size: 11px;
@@ -404,7 +287,6 @@ EDIT YOUR NEWS section near the bottom.
 ===================================================== */
 
 .news-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -414,11 +296,9 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .news-card {
-
     background: white;
 
-    border:
-        1px solid #e5e5e5;
+    border: 1px solid #e5e5e5;
 
     border-radius: 10px;
 
@@ -428,66 +308,52 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .news-card:hover {
-
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 
     box-shadow:
         0 12px 30px
         rgba(0,0,0,.08);
 }
 
-.news-image {
 
+/* Player-name replacement for images */
+
+.news-image {
     height: 165px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #333
-        );
+    background: #eeeeee;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    color: white;
+    padding: 20px;
 
-    overflow: hidden;
+    text-align: center;
 }
 
-.news-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.news-placeholder {
-
-    font-size: 42px;
+.news-image.player-name {
+    font-size: 25px;
 
     font-weight: 900;
+
+    color: #111;
+
+    text-transform: uppercase;
 }
 
-.news-card:first-child
-.news-image {
-
+.news-card:first-child .news-image {
     height: 230px;
+
+    font-size: 38px;
 }
 
 .news-content {
-
     padding: 20px;
 }
 
 .category {
-
     color: #d00000;
 
     font-size: 10px;
@@ -498,7 +364,6 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .news-content h3 {
-
     font-size: 19px;
 
     line-height: 1.2;
@@ -507,12 +372,10 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .news-card:first-child h3 {
-
     font-size: 25px;
 }
 
 .news-content p {
-
     color: #666;
 
     font-size: 13px;
@@ -521,7 +384,6 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .meta {
-
     color: #999;
 
     font-size: 10px;
@@ -535,11 +397,9 @@ EDIT YOUR NEWS section near the bottom.
 ===================================================== */
 
 .transfer-box {
-
     background: white;
 
-    border:
-        1px solid #e4e4e4;
+    border: 1px solid #e4e4e4;
 
     border-radius: 12px;
 
@@ -547,7 +407,6 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .transfer-header {
-
     background: #111;
 
     color: white;
@@ -567,7 +426,6 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .transfer-row {
-
     display: grid;
 
     grid-template-columns:
@@ -579,40 +437,31 @@ EDIT YOUR NEWS section near the bottom.
 
     padding: 20px;
 
-    border-bottom:
-        1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .transfer-row:last-child {
-
     border-bottom: none;
 }
 
 .player-name {
-
     font-weight: 900;
 }
 
 .player-club {
-
     color: #777;
-
     font-size: 11px;
 }
 
 .position {
-
     color: #555;
-
     font-size: 12px;
 }
 
 .status {
-
     width: fit-content;
 
-    padding:
-        6px 10px;
+    padding: 6px 10px;
 
     border-radius: 30px;
 
@@ -622,35 +471,26 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .confirmed {
-
     background: #dcf5e4;
-
     color: #147536;
 }
 
 .interest {
-
     background: #ffe3c7;
-
     color: #a34b00;
 }
 
 .developing {
-
     background: #fff0c4;
-
     color: #805c00;
 }
 
 .rumour {
-
     background: #eee;
-
     color: #555;
 }
 
 .source {
-
     color: #777;
 
     font-size: 10px;
@@ -660,80 +500,24 @@ EDIT YOUR NEWS section near the bottom.
 
 
 /* =====================================================
-   RUMOUR CARDS
-===================================================== */
-
-.rumour-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 20px;
-}
-
-.rumour-card {
-
-    background: white;
-
-    border:
-        1px solid #e5e5e5;
-
-    border-radius: 10px;
-
-    padding: 24px;
-}
-
-.rumour-card h3 {
-
-    font-size: 20px;
-
-    margin:
-        13px 0 6px;
-}
-
-.rumour-card p {
-
-    color: #666;
-
-    font-size: 13px;
-
-    margin-bottom: 14px;
-}
-
-.rumour-source {
-
-    color: #999;
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-
-/* =====================================================
    CONFIRMED TRANSFERS
 ===================================================== */
 
 .confirmed-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 20px;
 }
 
 .confirmed-card {
-
     background: white;
 
     border-radius: 10px;
 
-    border:
-        1px solid #e5e5e5;
+    border: 1px solid #e5e5e5;
 
     padding: 24px;
 
@@ -743,15 +527,12 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .confirmed-card::before {
-
     content: "";
 
     position: absolute;
 
     left: 0;
-
     top: 0;
-
     bottom: 0;
 
     width: 5px;
@@ -759,44 +540,44 @@ EDIT YOUR NEWS section near the bottom.
     background: #008a3e;
 }
 
-.confirmed-card-image {
 
-    width: 100%;
+/* Player name where picture used to be */
 
+.confirmed-player {
     height: 180px;
 
     margin-bottom: 18px;
 
     border-radius: 7px;
 
-    overflow: hidden;
+    background: #eeeeee;
 
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #333
-        );
-}
+    display: flex;
 
-.confirmed-card-image img {
+    align-items: center;
 
-    width: 100%;
+    justify-content: center;
 
-    height: 100%;
+    text-align: center;
 
-    object-fit: cover;
+    padding: 20px;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    color: #111;
+
+    text-transform: uppercase;
 }
 
 .confirmed-card h3 {
-
     font-size: 22px;
 
     margin-bottom: 5px;
 }
 
 .confirmed-card .club {
-
     color: #777;
 
     font-size: 12px;
@@ -805,7 +586,6 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .confirmed-card p {
-
     color: #555;
 
     font-size: 13px;
@@ -815,11 +595,56 @@ EDIT YOUR NEWS section near the bottom.
 
 
 /* =====================================================
-   TRUST
+   RUMOUR WATCH
+===================================================== */
+
+.rumour-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.rumour-card {
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    padding: 24px;
+}
+
+.rumour-card h3 {
+    font-size: 20px;
+
+    margin: 13px 0 6px;
+}
+
+.rumour-card p {
+    color: #666;
+
+    font-size: 13px;
+
+    margin-bottom: 14px;
+}
+
+.rumour-source {
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   TRUST BOX
 ===================================================== */
 
 .trust-box {
-
     background: #111;
 
     color: white;
@@ -831,7 +656,7 @@ EDIT YOUR NEWS section near the bottom.
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 20px;
 
@@ -839,26 +664,22 @@ EDIT YOUR NEWS section near the bottom.
 }
 
 .trust-item {
-
     text-align: center;
 }
 
 .trust-item .icon {
-
     font-size: 25px;
 
     margin-bottom: 8px;
 }
 
 .trust-item h3 {
-
     font-size: 14px;
 
     margin-bottom: 5px;
 }
 
 .trust-item p {
-
     color: #aaa;
 
     font-size: 11px;
@@ -870,7 +691,6 @@ EDIT YOUR NEWS section near the bottom.
 ===================================================== */
 
 footer {
-
     background: #111;
 
     color: white;
@@ -881,19 +701,16 @@ footer {
 }
 
 .footer-logo {
-
     font-size: 24px;
 
     font-weight: 900;
 }
 
 .footer-logo span {
-
     color: #d00000;
 }
 
 footer p {
-
     color: #999;
 
     font-size: 11px;
@@ -909,18 +726,14 @@ footer p {
 @media(max-width:900px) {
 
     .header-container {
-
         flex-direction: column;
 
-        align-items:
-            flex-start;
+        align-items: flex-start;
 
-        padding:
-            18px 20px;
+        padding: 18px 20px;
     }
 
     nav {
-
         width: 100%;
 
         overflow-x: auto;
@@ -929,24 +742,20 @@ footer p {
     }
 
     .news-grid {
-
         grid-template-columns: 1fr;
     }
 
     .rumour-grid,
     .confirmed-grid {
-
         grid-template-columns: 1fr;
     }
 
     .trust-box {
-
         grid-template-columns: 1fr;
     }
 
     .transfer-header,
     .transfer-row {
-
         grid-template-columns:
             1.5fr 1fr;
     }
@@ -955,67 +764,59 @@ footer p {
 @media(max-width:600px) {
 
     main {
-
-        padding:
-            20px 14px 50px;
+        padding: 20px 14px 50px;
     }
 
     .logo {
-
         font-size: 23px;
     }
 
     .breaking-container {
-
         flex-wrap: wrap;
     }
 
     .breaking-label {
-
         width: 100%;
 
         text-align: center;
     }
 
     .breaking-story {
-
         padding: 12px;
     }
 
     .hero {
-
         min-height: 420px;
     }
 
     .hero-content {
-
-        padding:
-            30px 25px;
+        padding: 30px 25px;
     }
 
     .hero h1 {
-
         font-size: 36px;
     }
 
     .section-title {
-
         font-size: 21px;
     }
 
     .transfer-header {
-
         display: none;
     }
 
     .transfer-row {
-
         grid-template-columns: 1fr;
     }
+
+    .confirmed-player {
+        height: 150px;
+        font-size: 25px;
+    }
+
 }
 
 </style>
-
 </head>
 
 
@@ -1067,7 +868,7 @@ NEWS
 
 
 <!-- =====================================================
-     BREAKING BAR
+     BREAKING NEWS
 ===================================================== -->
 
 <div class="breaking-bar">
@@ -1088,13 +889,9 @@ Fulham continue to monitor several targets.
 
 <div class="breaking-buttons">
 
-<button onclick="previousStory()">
-‹
-</button>
+<button onclick="previousStory()">‹</button>
 
-<button onclick="nextStory()">
-›
-</button>
+<button onclick="nextStory()">›</button>
 
 </div>
 
@@ -1112,30 +909,26 @@ Fulham continue to monitor several targets.
 
 <section class="hero">
 
-<img
-id="heroImage"
-class="hero-image"
-alt="Fulham featured transfer story"
->
-
-<div class="hero-overlay"></div>
-
 <div class="hero-content">
 
 <span class="hero-tag">
 TRANSFER CENTRE
 </span>
 
-<h1 id="heroTitle">
+<div class="hero-player">
+FULHAM FC
+</div>
+
+<h1>
 Fulham continue to strengthen under Álvaro Arbeloa
 </h1>
 
-<p id="heroDescription">
+<p>
 The Whites have already completed several major deals
 and remain active in the transfer market.
 </p>
 
-<div class="hero-meta" id="heroMeta">
+<div class="hero-meta">
 THE FULHAM INSIDER • 12 AUG 2026
 </div>
 
@@ -1166,17 +959,12 @@ Latest Fulham News
 <div class="news-grid">
 
 
-<!-- FEATURED NEWS -->
+<!-- MAIN STORY -->
 
 <article class="news-card">
 
-<div class="news-image">
-
-<img
-id="newsImage1"
-alt="Fulham transfer news"
->
-
+<div class="news-image player-name">
+FULHAM FC
 </div>
 
 <div class="news-content">
@@ -1207,13 +995,8 @@ THE FULHAM INSIDER • 12 AUG 2026
 
 <article class="news-card">
 
-<div class="news-image">
-
-<img
-id="newsImage2"
-alt="Shea Charles"
->
-
+<div class="news-image player-name">
+SHEA CHARLES
 </div>
 
 <div class="news-content">
@@ -1244,13 +1027,8 @@ SOURCE: FABRIZIO ROMANO
 
 <article class="news-card">
 
-<div class="news-image">
-
-<img
-id="newsImage3"
-alt="Héctor Fort"
->
-
+<div class="news-image player-name">
+HÉCTOR FORT
 </div>
 
 <div class="news-content">
@@ -1306,26 +1084,18 @@ SOURCE: 90MIN
 
 <div class="transfer-header">
 
-<div>
-PLAYER
-</div>
+<div>PLAYER</div>
 
-<div>
-POSITION
-</div>
+<div>POSITION</div>
 
-<div>
-STATUS
-</div>
+<div>STATUS</div>
 
-<div>
-ORIGINAL SOURCE
-</div>
+<div>ORIGINAL SOURCE</div>
 
 </div>
 
 
-<!-- SHEA CHARLES -->
+<!-- SHEA -->
 
 <div class="transfer-row">
 
@@ -1783,4 +1553,75 @@ OFFICIAL
 
 <!-- GONZALO -->
 
-<div class="conf
+<div class="confirmed-card">
+
+<div class="confirmed-player">
+GONZALO GARCÍA
+</div>
+
+<h3>
+Gonzalo García
+</h3>
+
+<div class="club">
+Real Madrid → Fulham
+</div>
+
+<p>
+The Spanish forward has joined Fulham on a
+long-term contract.
+</p>
+
+<div class="meta">
+SOURCE: FULHAM FC
+</div>
+
+</div>
+
+
+<!-- PALACIOS -->
+
+<div class="confirmed-card">
+
+<div class="confirmed-player">
+CÉSAR PALACIOS
+</div>
+
+<h3>
+César Palacios
+</h3>
+
+<div class="club">
+Real Madrid → Fulham
+</div>
+
+<p>
+The midfielder has joined Fulham from Real Madrid
+on a long-term deal.
+</p>
+
+<div class="meta">
+SOURCE: FULHAM FC
+</div>
+
+</div>
+
+
+<!-- SHEA -->
+
+<div class="confirmed-card">
+
+<div class="confirmed-player">
+SHEA CHARLES
+</div>
+
+<h3>
+Shea Charles
+</h3>
+
+<div class="club">
+Southampton → Fulham
+</div>
+
+<p>
+Charles has signed a five-yea
