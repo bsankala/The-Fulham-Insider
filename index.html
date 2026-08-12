@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Fulham Insider</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 3px solid #cc0000;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: #111;
+    }
+
+    .logo span {
+      color: #cc0000;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #cc0000;
+    }
+
+    /* BREAKING NEWS */
+    .breaking {
+      background: #111;
+      color: white;
+      overflow: hidden;
+    }
+
+    .breaking-inner {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .breaking-label {
+      background: #cc0000;
+      font-weight: 900;
+      padding: 17px 20px;
+      white-space: nowrap;
+    }
+
+    .breaking-content {
+      padding: 0 20px;
+      flex: 1;
+      font-weight: 700;
+    }
+
+    #breakingText {
+      transition: opacity 0.3s ease;
+    }
+
+    .breaking-controls {
+      display: flex;
+      gap: 6px;
+      padding-right: 15px;
+    }
+
+    .breaking-controls button {
+      background: #333;
+      border: none;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .breaking-controls button:hover {
+      background: #cc0000;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      border-left: 5px solid #cc0000;
+      padding-left: 12px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #111, #2b2b2b);
+      color: white;
+      border-radius: 12px;
+      padding: 45px;
+      margin-bottom: 45px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "FFC";
+      position: absolute;
+      right: 35px;
+      bottom: -30px;
+      font-size: 150px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #cc0000;
+      color: white;
+      padding: 7px 12px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 52px);
+      max-width: 750px;
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #ddd;
+      max-width: 650px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .hero-meta {
+      margin-top: 22px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    /* NEWS GRID */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .news-image {
+      height: 150px;
+      background: linear-gradient(135deg, #222, #555);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .news-body {
+      padding: 20px;
+    }
+
+    .news-body h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .news-body p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .date {
+      font-size: 12px;
+      color: #999;
+      font-weight: 700;
+    }
+
+    /* TRANSFER CENTRE */
+    .transfer-section {
+      margin-bottom: 50px;
+    }
+
+    .transfer-table {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+    }
+
+    .transfer-row {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      padding: 18px 20px;
+      border-bottom: 1px solid #eee;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .transfer-row:last-child {
+      border-bottom: none;
+    }
+
+    .transfer-header {
+      background: #111;
+      color: white;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .player {
+      font-weight: 800;
+    }
+
+    .club {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .green {
+      background: #dff5e5;
+      color: #16733a;
+    }
+
+    .yellow {
+      background: #fff1c7;
+      color: #8a6200;
+    }
+
+    .red {
+      background: #ffe0e0;
+      color: #a00000;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: white;
+      margin-top: 50px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    footer h2 span {
+      color: #cc0000;
+    }
+
+    footer p {
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .breaking-inner {
+        flex-wrap: wrap;
+      }
+
+      .breaking-label {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .breaking-content {
+        padding: 12px;
+      }
+
+      .breaking-controls {
+        padding-bottom: 10px;
+        padding-right: 10px;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 30px 25px;
+      }
+
+      .transfer-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .transfer-header {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        THE FULHAM <span>INSIDER</span>
+      </div>
+
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#transfers">TRANSFERS</a>
+        <a href="#rumours">RUMOURS</a>
+        <a href="#news">NEWS</a>
+        <a href="#opinion">OPINION</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- BREAKING NEWS BAR -->
+  <div class="breaking">
+    <div class="breaking-inner">
+
+      <div class="breaking-label">
+        🚨 BREAKING
+      </div>
+
+      <div class="breaking-content">
+        <span id="breakingText">
+          Welcome to The Fulham Insider
+        </span>
+      </div>
+
+      <div class="breaking-controls">
+        <button onclick="previousStory()">‹</button>
+        <button onclick="nextStory()">›</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <main>
+
+    <!-- HERO STORY -->
+    <section class="hero">
+
+      <span class="tag">THE FULHAM INSIDER</span>
+
+      <h1>
+        Welcome to The Fulham Insider
+      </h1>
+
+      <p>
+        Your home for Fulham transfer news, rumours, confirmed deals,
+        breaking stories and everything happening around Craven Cottage.
+      </p>
+
+      <div class="hero-meta">
+        THE FULHAM INSIDER • TRANSFER CENTRE
+      </div>
+
+    </section>
+
+
+    <!-- LATEST NEWS -->
+    <section id="news">
+
+      <h2 class="section-title">
+        Latest Fulham News
+      </h2>
+
+      <div class="news-grid">
+
+        <article class="news-card">
+          <div class="news-image">
+            FFC
+          </div>
+
+          <div class="news-body">
+            <h3>
+              Fulham transfer window continues to gather pace
+            </h3>
+
+            <p>
+              Keep up with the latest developments surrounding
+              Marco Silva's squad.
+            </p>
+
+            <div class="date">
+              DEMO STORY • THE FULHAM INSIDER
+            </div>
+          </div>
+        </article>
+
+
+        <article class="news-card">
+          <div class="news-image">
+            ⚽
+          </div>
+
+          <div class="news-body">
+            <h3>
+              Fulham keeping an eye on midfield options
+            </h3>
+
+            <p>
+              The latest transfer developments from around
+              Craven Cottage.
+            </p>
+
+            <div class="date">
+              DEMO STORY • THE FULHAM INSIDER
+            </div>
+          </div>
+        </article>
+
+
+        <article class="news-card">
+          <div class="news-image">
+            🔥
+          </div>
+
+          <div class="news-body">
+            <h3>
+              Transfer Centre: latest rumours and updates
+            </h3>
+
+            <p>
+              Follow potential incomings and outgoings throughout
+              the transfer window.
+            </p>
+
+            <div class="date">
+              DEMO STORY • THE FULHAM INSIDER
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRANSFER CENTRE -->
+    <section class="transfer-section" id="transfers">
+
+      <h2 class="section-title">
+        🔄 Transfer Centre
+      </h2>
+
+      <div class="transfer-table">
+
+        <div class="transfer-row transfer-header">
+          <div>PLAYER</div>
+          <div>POSITION</div>
+          <div>STATUS</div>
+          <div>SOURCE</div>
+        </div>
+
+
+        <div class="transfer-row">
+
+          <div>
+            <div class="player">Example Player</div>
+            <div class="club">Current Club → Fulham</div>
+          </div>
+
+          <div>Midfielder</div>
+
+          <div>
+            <span class="status yellow">
+              DEVELOPING
+            </span>
+          </div>
+
+          <div class="club">
+            Demo
+          </div>
+
+        </div>
+
+
+        <div class="transfer-row">
+
+          <div>
+            <div class="player">Example Player</div>
+            <div class="club">Current Club → Fulham</div>
+          </div>
+
+          <div>Forward</div>
+
+          <div>
+            <span class="status green">
+              ADVANCED
+            </span>
+          </div>
+
+          <div class="club">
+            Demo
+          </div>
+
+        </div>
+
+
+        <div class="transfer-row">
+
+          <div>
+            <div class="player">Example Player</div>
+            <div class="club">Fulham → Other Club</div>
+          </div>
+
+          <div>Defender</div>
+
+          <div>
+            <span class="status red">
+              OUTGOING
+            </span>
+          </div>
+
+          <div class="club">
+            Demo
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RUMOURS -->
+    <section id="rumours">
+
+      <h2 class="section-title">
+        👀 Transfer Rumours
+      </h2>
+
+      <div class="news-grid">
+
+        <article class="news-card">
+
+          <div class="news-body">
+
+            <span class="status yellow">
+              DEVELOPING
+            </span>
+
+            <h3 style="margin-top: 12px;">
+              Fulham monitoring potential midfield target
+            </h3>
+
+            <p>
+              DEMO CONTENT — replace this with a properly sourced
+              Fulham transfer report.
+            </p>
+
+            <div class="date">
+              SOURCE: DEMO
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-body">
+
+            <span class="status green">
+              STRONG INTEREST
+            </span>
+
+            <h3 style="margin-top: 12px;">
+              Fulham linked with attacking player
+            </h3>
+
+            <p>
+              DEMO CONTENT — only publish real reports when supported
+              by a reliable source.
+            </p>
+
+            <div class="date">
+              SOURCE: DEMO
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-body">
+
+            <span class="status red">
+              UNLIKELY
+            </span>
+
+            <h3 style="margin-top: 12px;">
+              Fulham target currently considered unlikely
+            </h3>
+
+            <p>
+              DEMO CONTENT — update this section with verified
+              transfer information.
+            </p>
+
+            <div class="date">
+              SOURCE: DEMO
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h2>
+      THE FULHAM <span>INSIDER</span>
+    </h2>
+
+    <p>
+      Independent Fulham FC fan media.
+    </p>
+
+    <p style="margin-top: 8px;">
+      Transfer rumours should be treated as rumours until officially confirmed.
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    /* BREAKING NEWS STORIES */
+
+    const breakingStories = [
+      "Welcome to The Fulham Insider — your home for Fulham transfer news.",
+      "TRANSFER CENTRE — Follow the latest Fulham rumours and developments.",
+      "BREAKING — The latest Fulham transfer updates will appear here.",
+      "RUMOUR WATCH — Follow potential incomings and outgoings.",
+      "CRAVEN COTTAGE — Get the latest news surrounding Fulham FC.",
+      "TRANSFER WINDOW — Stay up to date with every major development.",
+      "THE FULHAM INSIDER — Independent Fulham fan media.",
+      "CONFIRMED — Completed Fulham deals will be tracked here."
+    ];
+
+    let currentStory = 0;
+
+    const breakingText = document.getElementById("breakingText");
+
+    function showStory(index) {
+
+      currentStory =
+        (index + breakingStories.length) %
+        breakingStories.length;
+
+      breakingText.style.opacity = "0";
+
+      setTimeout(() => {
+
+        breakingText.textContent =
+          breakingStories[currentStory];
+
+        breakingText.style.opacity = "1";
+
+      }, 250);
+    }
+
+
+    function nextStory() {
+      showStory(currentStory + 1);
+    }
+
+
+    function previousStory() {
+      showStory(currentStory - 1);
+    }
+
+
+    /* AUTOMATICALLY CHANGE STORY */
+
+    setInterval(() => {
+      nextStory();
+    }, 5000);
+
+  </script>
+
+</body>
+        </html
