@@ -1624,4 +1624,1042 @@ Southampton → Fulham
 </div>
 
 <p>
-Charles has signed a five-yea
+Charles has signed a five-yea/* =====================================================
+   TRUST BOX
+===================================================== */
+
+.trust-box {
+    background: #111;
+
+    color: white;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+.trust-item {
+    text-align: center;
+}
+
+.trust-item .icon {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.trust-item h3 {
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.trust-item p {
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #111;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    font-size: 24px;
+
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: #d00000;
+}
+
+footer p {
+    color: #999;
+
+    font-size: 11px;
+
+    margin-top: 7px;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 18px 20px;
+    }
+
+    nav {
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 18px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rumour-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .confirmed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-box {
+        grid-template-columns: 1fr;
+    }
+
+    .transfer-header,
+    .transfer-row {
+        grid-template-columns:
+            1.5fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    main {
+        padding:
+            20px 14px 50px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .breaking-container {
+        flex-wrap: wrap;
+    }
+
+    .breaking-label {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .breaking-story {
+        padding: 12px;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .hero-content {
+        padding:
+            30px 25px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 21px;
+    }
+
+    .transfer-header {
+        display: none;
+    }
+
+    .transfer-row {
+        grid-template-columns: 1fr;
+    }
+
+    .confirmed-player {
+        height: 150px;
+
+        font-size: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header-container">
+
+<a href="#" class="logo">
+
+THE FULHAM
+<span>INSIDER</span>
+
+</a>
+
+
+<nav>
+
+<a href="#">
+HOME
+</a>
+
+<a href="#transfers">
+TRANSFERS
+</a>
+
+<a href="#rumours">
+RUMOURS
+</a>
+
+<a href="#confirmed">
+CONFIRMED
+</a>
+
+<a href="#news">
+NEWS
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     BREAKING NEWS BAR
+===================================================== -->
+
+<div class="breaking-bar">
+
+<div class="breaking-container">
+
+<div class="breaking-label">
+🚨 BREAKING
+</div>
+
+
+<div class="breaking-story">
+
+<span id="breakingText">
+Fulham continue to monitor several targets.
+</span>
+
+</div>
+
+
+<div class="breaking-buttons">
+
+<button onclick="previousStory()">
+‹
+</button>
+
+<button onclick="nextStory()">
+›
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<main>
+
+
+<!-- =====================================================
+     FEATURED STORY
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<span class="hero-tag">
+TRANSFER CENTRE
+</span>
+
+
+<div class="hero-player">
+FULHAM FC
+</div>
+
+
+<h1>
+Fulham continue to strengthen under Álvaro Arbeloa
+</h1>
+
+
+<p>
+The Whites have already completed several major deals
+and remain active in the transfer market.
+</p>
+
+
+<div class="hero-meta">
+THE FULHAM INSIDER • 12 AUG 2026
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LATEST NEWS
+===================================================== -->
+
+<section class="section" id="news">
+
+<div class="section-heading">
+
+<h2 class="section-title">
+Latest Fulham News
+</h2>
+
+<span class="section-label">
+12 AUG 2026
+</span>
+
+</div>
+
+
+<div class="news-grid">
+
+
+<!-- MAIN STORY -->
+
+<article class="news-card">
+
+<div class="news-image">
+FULHAM FC
+</div>
+
+
+<div class="news-content">
+
+<div class="category">
+TRANSFER CENTRE
+</div>
+
+
+<h3>
+Fulham continue to strengthen under Álvaro Arbeloa
+</h3>
+
+
+<p>
+The Whites have already completed several major deals
+and remain active in the transfer market.
+</p>
+
+
+<div class="meta">
+THE FULHAM INSIDER • 12 AUG 2026
+</div>
+
+</div>
+
+</article>
+
+
+<!-- SHEA CHARLES -->
+
+<article class="news-card">
+
+<div class="news-image">
+SHEA CHARLES
+</div>
+
+
+<div class="news-content">
+
+<div class="category">
+CONFIRMED
+</div>
+
+
+<h3>
+Shea Charles joins Fulham
+</h3>
+
+
+<p>
+The midfielder has joined from Southampton
+on a five-year contract.
+</p>
+
+
+<div class="meta">
+SOURCE: FABRIZIO ROMANO
+</div>
+
+</div>
+
+</article>
+
+
+<!-- HÉCTOR FORT -->
+
+<article class="news-card">
+
+<div class="news-image">
+HÉCTOR FORT
+</div>
+
+
+<div class="news-content">
+
+<div class="category">
+INTEREST
+</div>
+
+
+<h3>
+Fulham interested in Héctor Fort
+</h3>
+
+
+<p>
+The Barcelona full-back is reportedly attracting
+strong interest from Fulham.
+</p>
+
+
+<div class="meta">
+SOURCE: 90MIN
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TRANSFER CENTRE
+===================================================== -->
+
+<section class="section" id="transfers">
+
+<div class="section-heading">
+
+<h2 class="section-title">
+🔄 Transfer Centre
+</h2>
+
+<span class="section-label">
+2026/27
+</span>
+
+</div>
+
+
+<div class="transfer-box">
+
+
+<div class="transfer-header">
+
+<div>
+PLAYER
+</div>
+
+<div>
+POSITION
+</div>
+
+<div>
+STATUS
+</div>
+
+<div>
+ORIGINAL SOURCE
+</div>
+
+</div>
+
+
+<!-- SHEA CHARLES -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Shea Charles
+</div>
+
+<div class="player-club">
+Southampton → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Midfielder
+</div>
+
+
+<div>
+
+<span class="status confirmed">
+CONFIRMED
+</span>
+
+</div>
+
+
+<div class="source">
+Fabrizio Romano
+</div>
+
+</div>
+
+
+<!-- GONZALO GARCÍA -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Gonzalo García
+</div>
+
+<div class="player-club">
+Real Madrid → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Forward
+</div>
+
+
+<div>
+
+<span class="status confirmed">
+CONFIRMED
+</span>
+
+</div>
+
+
+<div class="source">
+Fulham FC
+</div>
+
+</div>
+
+
+<!-- CÉSAR PALACIOS -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+César Palacios
+</div>
+
+<div class="player-club">
+Real Madrid → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Midfielder
+</div>
+
+
+<div>
+
+<span class="status confirmed">
+CONFIRMED
+</span>
+
+</div>
+
+
+<div class="source">
+Fulham FC
+</div>
+
+</div>
+
+
+<!-- WATARU ENDO -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Wataru Endo
+</div>
+
+<div class="player-club">
+Liverpool → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Midfielder
+</div>
+
+
+<div>
+
+<span class="status rumour">
+RUMOUR
+</span>
+
+</div>
+
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+
+<!-- HÉCTOR FORT -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Héctor Fort
+</div>
+
+<div class="player-club">
+Barcelona → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Full-back
+</div>
+
+
+<div>
+
+<span class="status interest">
+INTEREST
+</span>
+
+</div>
+
+
+<div class="source">
+90min
+</div>
+
+</div>
+
+
+<!-- AÏT BOUDLAL -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Abdelhamid Aït Boudlal
+</div>
+
+<div class="player-club">
+Rennes → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Centre-back
+</div>
+
+
+<div>
+
+<span class="status developing">
+DEVELOPING
+</span>
+
+</div>
+
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+
+<!-- JORDAN JAMES -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Jordan James
+</div>
+
+<div class="player-club">
+Rennes → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Midfielder
+</div>
+
+
+<div>
+
+<span class="status interest">
+INTEREST
+</span>
+
+</div>
+
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+
+<!-- ENDRICK -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Endrick
+</div>
+
+<div class="player-club">
+Real Madrid → Fulham
+</div>
+
+</div>
+
+
+<div class="position">
+Forward
+</div>
+
+
+<div>
+
+<span class="status interest">
+INTEREST
+</span>
+
+</div>
+
+
+<div class="source">
+TEAMtalk
+</div>
+
+</div>
+<!-- ETHAN NWANERI -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Ethan Nwaneri
+</div>
+
+<div class="player-club">
+Arsenal → Fulham
+</div>
+
+</div>
+
+<div class="position">
+Midfielder
+</div>
+
+<div>
+
+<span class="status developing">
+DEVELOPING
+</span>
+
+</div>
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+
+<!-- GENY CATAMO -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Geny Catamo
+</div>
+
+<div class="player-club">
+Sporting CP → Fulham
+</div>
+
+</div>
+
+<div class="position">
+Winger
+</div>
+
+<div>
+
+<span class="status interest">
+INTEREST
+</span>
+
+</div>
+
+<div class="source">
+TEAMtalk
+</div>
+
+</div>
+
+
+<!-- ALISTAIR JOHNSTON -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Alistair Johnston
+</div>
+
+<div class="player-club">
+Celtic → Fulham
+</div>
+
+</div>
+
+<div class="position">
+Full-back
+</div>
+
+<div>
+
+<span class="status developing">
+DEVELOPING
+</span>
+
+</div>
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+
+<!-- REISS NELSON -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Reiss Nelson
+</div>
+
+<div class="player-club">
+Arsenal → Fulham
+</div>
+
+</div>
+
+<div class="position">
+Winger
+</div>
+
+<div>
+
+<span class="status interest">
+INTEREST
+</span>
+
+</div>
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+
+<!-- NESTORY IRANKUNDA -->
+
+<div class="transfer-row">
+
+<div>
+
+<div class="player-name">
+Nestory Irankunda
+</div>
+
+<div class="player-club">
+Watford → Fulham
+</div>
+
+</div>
+
+<div class="position">
+Winger
+</div>
+
+<div>
+
+<span class="status interest">
+INTEREST
+</span>
+
+</div>
+
+<div class="source">
+TransferFeed
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONFIRMED TRANSFERS
+===================================================== -->
+
+<section class="section" id="confirmed">
+
+<div class="section-heading">
+
+<h2 class="section-title">
+🟢 Confirmed Transfers
+</h2>
+
+<span class="section-label">
+OFFICIAL
+</span>
+
+</div>
+
+
+<div class="confirmed-grid">
+
+
+<!-- GONZALO GARCÍA -->
+
+<div class="confirmed-card">
+
+<div class="confirmed-player">
+GONZALO GARCÍA
+</div>
+
+<h3>
+Gonzalo García
+</h3>
+
+<div class="club">
+Real Madrid → Fulham
+</div>
+
+<p>
+The Spanish forward has joined Fulham on a
+long-term contract.
+</p>
+
+<div class="meta">
+SOURCE: FULHAM FC
+</div>
+
+</div>
+
+
+<!-- CÉSAR PALACIOS -->
+
+<div class="confirmed-card">
+
+<div class="confirmed-player">
+CÉSAR PALACIOS
+</div>
+
+<h3>
+César Palacios
+</h3>
+
+<div class="club">
+Real Madrid → Ful
