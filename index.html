@@ -1,882 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Fulham Insider</title>
+<title>The Fulham Insider | V8</title>
 
 <style>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f4f4;
-color:#111;
-line-height:1.5;
+html {
+    scroll-behavior: smooth;
 }
 
-a{
-text-decoration:none;
-color:inherit;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    color: #111;
 }
 
-button{
-font-family:inherit;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-header{
-background:#fff;
-border-bottom:4px solid #d00000;
-position:sticky;
-top:0;
-z-index:1000;
+button {
+    font-family: inherit;
+    cursor: pointer;
 }
 
-.header{
-max-width:1200px;
-margin:auto;
-padding:18px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
+header {
+    background: #fff;
+    border-bottom: 4px solid #d00000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo{
-font-size:25px;
-font-weight:900;
+.header {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.logo span{
-color:#d00000;
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    white-space: nowrap;
 }
 
-nav{
-display:flex;
-gap:20px;
-overflow-x:auto;
+.logo span {
+    color: #d00000;
 }
 
-nav a{
-font-size:12px;
-font-weight:900;
-white-space:nowrap;
+nav {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
 }
 
-nav a:hover{
-color:#d00000;
+nav a {
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
 }
 
-.breaking{
-background:#111;
-color:#fff;
+nav a:hover {
+    color: #d00000;
 }
 
-.breaking-inner{
-max-width:1200px;
-margin:auto;
-display:flex;
-align-items:center;
-min-height:50px;
+.breaking {
+    background: #111;
+    color: #fff;
 }
 
-.breaking-label{
-background:#d00000;
-padding:15px 18px;
-font-size:10px;
-font-weight:900;
+.breaking-inner {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
 }
 
-.breaking-text{
-padding:0 18px;
-font-size:12px;
-font-weight:700;
-flex:1;
+.breaking-label {
+    background: #d00000;
+    padding: 13px 16px;
+    font-size: 10px;
+    font-weight: 900;
 }
 
-.breaking button{
-background:#222;
-border:1px solid #444;
-color:#fff;
-width:30px;
-height:30px;
-border-radius:50%;
-margin-right:6px;
-cursor:pointer;
+.breaking-text {
+    padding: 0 16px;
+    font-size: 12px;
+    font-weight: 700;
+    flex: 1;
 }
 
-main{
-max-width:1200px;
-margin:auto;
-padding:35px 20px 70px;
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px 70px;
 }
 
-.hero{
-background:#fff;
-border:1px solid #ddd;
-border-radius:12px;
-padding:55px 45px;
-margin-bottom:45px;
+.hero {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 50px 40px;
+    margin-bottom: 40px;
 }
 
-.tag{
-display:inline-block;
-background:#d00000;
-color:#fff;
-padding:6px 10px;
-border-radius:4px;
-font-size:10px;
-font-weight:900;
-margin-bottom:15px;
+.tag {
+    display: inline-block;
+    background: #d00000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 900;
+    margin-bottom: 15px;
 }
 
-.hero h1{
-font-size:clamp(38px,6vw,62px);
-line-height:1;
-letter-spacing:-2px;
-max-width:850px;
-margin-bottom:18px;
+.hero h1 {
+    font-size: clamp(40px, 7vw, 68px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-bottom: 18px;
 }
 
-.hero p{
-color:#666;
-max-width:650px;
+.hero p {
+    max-width: 650px;
+    color: #666;
+    font-size: 15px;
 }
 
-.meta{
-color:#999;
-font-size:10px;
-font-weight:800;
-margin-top:14px;
+.meta {
+    margin-top: 12px;
+    color: #999;
+    font-size: 10px;
+    font-weight: 800;
 }
 
-.section{
-margin-bottom:50px;
+.section {
+    margin-bottom: 45px;
 }
 
-.section-title{
-font-size:25px;
-font-weight:900;
-border-left:5px solid #d00000;
-padding-left:12px;
-margin-bottom:20px;
+.section-title {
+    border-left: 5px solid #d00000;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 900;
 }
 
-.card{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-overflow:hidden;
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.card:hover{
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+.card:hover {
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
 }
 
-.name-box{
-height:170px;
-background:#e9e9e9;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-font-size:27px;
-font-weight:900;
-padding:20px;
+.name-box {
+    height: 190px;
+    background: #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 900;
 }
 
-.card-content{
-padding:20px;
+.card-content {
+    padding: 20px;
 }
 
-.category{
-color:#d00000;
-font-size:10px;
-font-weight:900;
-margin-bottom:8px;
+.category {
+    margin-bottom: 8px;
+    color: #d00000;
+    font-size: 10px;
+    font-weight: 900;
 }
 
-.card h3{
-font-size:20px;
-line-height:1.2;
-margin-bottom:10px;
+.card h3 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
 
-.card p{
-color:#666;
-font-size:13px;
+.card p {
+    color: #666;
+    font-size: 13px;
 }
 
-.read-button{
-display:inline-block;
-margin-top:17px;
-padding:10px 14px;
-background:#111;
-color:#fff;
-border:0;
-border-radius:5px;
-font-size:10px;
-font-weight:900;
-cursor:pointer;
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 900;
 }
 
-.read-button:hover{
-background:#d00000;
+.latest {
+    background: #d00000;
+    color: #fff;
 }
 
-.news-grid{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:20px;
+.ongoing {
+    background: #ffe0c2;
+    color: #a34600;
 }
 
-.big .name-box{
-height:230px;
-font-size:38px;
+.strong {
+    background: #ffd9d9;
+    color: #a00000;
 }
 
-.big h3{
-font-size:27px;
+.interest {
+    background: #fff0c9;
+    color: #8a5b00;
 }
 
-.confirmed-grid,
-.rumour-grid,
-.insider-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+.confirmed {
+    background: #dcf5e4;
+    color: #147536;
 }
 
-.confirmed-card,
-.rumour-card,
-.insider-card{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-padding:22px;
+.loan {
+    background: #fff0c9;
+    color: #8a5b00;
 }
 
-.confirmed-card{
-border-left:5px solid #008a3e;
+.left {
+    background: #eee;
+    color: #555;
 }
 
-.confirmed-card h3,
-.rumour-card h3,
-.insider-card h3{
-font-size:21px;
-margin:12px 0 6px;
+.read-button {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: #111;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 900;
 }
 
-.confirmed-card p,
-.rumour-card p,
-.insider-card p{
-color:#666;
-font-size:13px;
-margin-bottom:10px;
+.read-button:hover {
+    background: #d00000;
 }
 
-.status{
-display:inline-block;
-padding:6px 10px;
-border-radius:20px;
-font-size:9px;
-font-weight:900;
+.news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
 }
 
-.confirmed{
-background:#dcf5e4;
-color:#147536;
+.rumour-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
 }
 
-.interest{
-background:#ffe3c7;
-color:#a34b00;
+.rumour-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left: 5px solid #e47b00;
+    border-radius: 10px;
+    padding: 22px;
 }
 
-.rumour{
-background:#eee;
-color:#555;
+.rumour-card.strong-card {
+    border-left-color: #d00000;
 }
 
-.match-status{
-background:#dcecff;
-color:#165a9e;
+.rumour-card h3 {
+    margin: 12px 0 8px;
+    font-size: 21px;
 }
 
-.transfer-box{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-overflow:hidden;
+.rumour-card p {
+    color: #666;
+    font-size: 13px;
 }
 
-.transfer-header,
-.transfer{
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr 1fr;
-gap:15px;
-align-items:center;
+.source {
+    margin-top: 12px;
+    color: #888;
+    font-size: 10px;
+    font-weight: 800;
 }
 
-.transfer-header{
-background:#111;
-color:#fff;
-padding:15px 18px;
-font-size:10px;
-font-weight:900;
+.latest-news {
+    border-left: 6px solid #d00000;
 }
 
-.transfer{
-padding:18px;
-border-bottom:1px solid #eee;
+.latest-news .name-box {
+    background: #111;
+    color: #fff;
 }
 
-.player{
-font-weight:900;
+.transfer-guide {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
 }
 
-.club{
-font-size:11px;
-color:#777;
+.guide {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 10px;
+    text-align: center;
 }
 
-.position{
-font-size:12px;
-color:#555;
+.guide strong {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 5px;
 }
 
-.source{
-font-size:10px;
-font-weight:700;
-color:#777;
+.guide span {
+    color: #777;
+    font-size: 10px;
 }
 
-.tracker{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-margin-bottom:22px;
-}
-
-.tracker-card{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-padding:20px;
-text-align:center;
-}
-
-.tracker-number{
-font-size:28px;
-font-weight:900;
-}
-
-.tracker-label{
-font-size:10px;
-font-weight:800;
-color:#777;
-}
-
-.match-grid{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-}
-
-.match-card{
-background:#fff;
-border:1px solid #ddd;
-border-radius:12px;
-padding:25px;
-}
-
-.match-main{
-text-align:center;
-}
-
-.match-label{
-font-size:10px;
-font-weight:900;
-color:#d00000;
-margin-bottom:10px;
-}
-
-.teams{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:28px;
-}
-
-.team{
-font-size:22px;
-font-weight:900;
-}
-
-.score{
-font-size:48px;
-font-weight:900;
-letter-spacing:-2px;
-}
-
-.match-sub{
-color:#777;
-font-size:11px;
-font-weight:800;
-margin-top:8px;
-}
-
-.match-info{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:22px;
-}
-
-.info-box{
-background:#f4f4f4;
-border-radius:8px;
-padding:12px;
-text-align:center;
-}
-
-.info-box strong{
-display:block;
-font-size:11px;
-}
-
-.info-box span{
-display:block;
-color:#777;
-font-size:10px;
-margin-top:3px;
-}
-
-.timeline{
-margin-top:25px;
-}
-
-.timeline-row{
-display:flex;
-gap:12px;
-padding:12px 0;
-border-bottom:1px solid #eee;
-font-size:13px;
-}
-
-.timeline-time{
-font-weight:900;
-width:55px;
-}
-
-.timeline-event{
-color:#555;
-}
-
-.next-match{
-background:#111;
-color:#fff;
-border-radius:12px;
-padding:30px;
-}
-
-.next-match .match-label{
-color:#fff;
-}
-
-.next-match .team{
-color:#fff;
-}
-
-.next-match .match-sub{
-color:#bbb;
-}
-
-.stats-table{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-overflow:hidden;
-}
-
-.stat-row{
-display:grid;
-grid-template-columns:1fr 1.2fr 1fr;
-padding:13px 18px;
-border-bottom:1px solid #eee;
-font-size:12px;
-}
-
-.stat-row:first-child{
-background:#111;
-color:#fff;
-font-weight:900;
-}
-
-.stat-row div:nth-child(2){
-text-align:center;
-font-weight:900;
-}
-
-.stat-row div:last-child{
-text-align:right;
-}
-
-.stat-note{
-padding:12px 18px;
-color:#888;
-font-size:10px;
-background:#fafafa;
-}
-
-.rankings{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:12px;
-}
-
-.rank{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-padding:18px;
-text-align:center;
-}
-
-.rank-number{
-font-size:28px;
-font-weight:900;
-color:#d00000;
-}
-
-.rank-player{
-font-size:14px;
-font-weight:900;
-margin-top:6px;
-}
-
-.rank-note{
-font-size:10px;
-color:#777;
-margin-top:6px;
-}
-
-.takeaway-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-.takeaway{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-padding:22px;
-}
-
-.takeaway h3{
-font-size:18px;
-margin-bottom:8px;
-}
-
-.takeaway p{
-color:#666;
-font-size:13px;
-}
-
-.archive{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-}
-
-.archive-card{
-background:#fff;
-border:1px solid #ddd;
-border-radius:10px;
-padding:18px;
-}
-
-.archive-score{
-font-size:24px;
-font-weight:900;
-margin:8px 0;
-}
-
-.archive-card p{
-font-size:11px;
-color:#777;
-}
-
-.insider-note{
-background:#fff;
-border-left:5px solid #d00000;
-border-radius:8px;
-padding:20px;
-margin-bottom:20px;
-color:#555;
-font-size:13px;
-}
-
-footer{
-background:#111;
-color:#fff;
-text-align:center;
-padding:40px 20px;
-}
-
-.footer-logo{
-font-size:22px;
-font-weight:900;
-}
-
-.footer-logo span{
-color:#d00000;
-}
-
-footer p{
-color:#999;
-font-size:11px;
-margin-top:5px;
-}
-
-.article-overlay{
-display:none;
-position:fixed;
-inset:0;
-z-index:5000;
-background:#f4f4f4;
-overflow-y:auto;
-}
-
-.article-overlay.active{
-display:block;
-}
-
-.article-header{
-background:#fff;
-border-bottom:4px solid #d00000;
-}
-
-.article-header-inner{
-max-width:900px;
-margin:auto;
-padding:18px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.article-logo{
-font-size:20px;
-font-weight:900;
-}
-
-.article-logo span{
-color:#d00000;
-}
-
-.close-button{
-border:0;
-background:#111;
-color:#fff;
-padding:10px 14px;
-border-radius:5px;
-font-size:10px;
-font-weight:900;
-cursor:pointer;
-}
-
-.close-button:hover{
-background:#d00000;
-}
-
-.article{
-max-width:850px;
-margin:40px auto 80px;
-padding:0 20px;
-}
-
-.article h1{
-font-size:clamp(35px,6vw,58px);
-line-height:1;
-letter-spacing:-2px;
-margin-bottom:18px;
-}
-
-.article-intro{
-font-size:17px;
-color:#666;
-margin-bottom:22px;
-}
-
-.article-info{
-background:#fff;
-border-left:5px solid #d00000;
-padding:17px;
-margin-bottom:25px;
-font-size:12px;
-}
-
-.article-body{
-background:#fff;
-border-radius:10px;
-padding:35px;
-}
-
-.article-body h2{
-font-size:24px;
-margin:25px 0 10px;
-}
-
-.article-body h2:first-child{
-margin-top:0;
-}
-
-.article-body p{
-font-size:16px;
-color:#333;
-margin-bottom:17px;
-}
-
-.sources{
-margin-top:30px;
-padding:20px;
-background:#eee;
-border-radius:8px;
-}
+@media(max-width:900px) {
 
-.sources h3{
-font-size:13px;
-margin-bottom:10px;
-}
-
-.sources a{
-display:block;
-color:#c00000;
-font-size:12px;
-font-weight:700;
-margin:7px 0;
-}
-
-.back-button{
-display:inline-block;
-margin-top:25px;
-background:#111;
-color:#fff;
-padding:12px 16px;
-border-radius:5px;
-font-size:10px;
-font-weight:900;
-cursor:pointer;
-}
-
-@media(max-width:900px){
-
-.news-grid,
-.confirmed-grid,
-.rumour-grid,
-.insider-grid,
-.archive{
-grid-template-columns:1fr;
-}
-
-.match-grid{
-grid-template-columns:1fr;
-}
-
-.transfer-header{
-display:none;
-}
-
-.transfer{
-grid-template-columns:1fr;
-gap:7px;
-}
-
-.tracker{
-grid-template-columns:repeat(2,1fr);
-}
-
-.rankings{
-grid-template-columns:repeat(2,1fr);
-}
-
-.takeaway-grid{
-grid-template-columns:1fr;
-}
-
-}
+    .news-grid,
+    .rumour-grid {
+        grid-template-columns: 1fr;
+    }
 
-@media(max-width:600px){
+    .transfer-guide {
+        grid-template-columns: repeat(3,1fr);
+    }
 
-.header{
-flex-direction:column;
-align-items:flex-start;
 }
 
-nav{
-width:100%;
-}
-
-.hero{
-padding:35px 25px;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.breaking-inner{
-flex-wrap:wrap;
-}
-
-.breaking-label{
-width:100%;
-text-align:center;
-}
-
-.breaking-text{
-padding:12px;
-}
+@media(max-width:650px) {
 
-.article-body{
-padding:24px 20px;
-}
-
-.tracker{
-grid-template-columns:1fr;
-}
-
-.teams{
-gap:12px;
-}
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-.team{
-font-size:18px;
-}
-
-.score{
-font-size:38px;
-}
+    .hero {
+        padding: 35px 25px;
+    }
 
-.match-info{
-grid-template-columns:1fr;
-}
-
-.rankings{
-grid-template-columns:1fr 1fr;
-}
+    .transfer-guide {
+        grid-template-columns: 1fr 1fr;
+    }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -895,7 +391,7 @@ THE FULHAM <span>INSIDER</span>
 <a href="#matches">MATCH CENTRE</a>
 <a href="#transfers">TRANSFERS</a>
 <a href="#rumours">RUMOURS</a>
-<a href="#confirmed">CONFIRMED</a>
+<a href="#outgoings">OUTGOINGS</a>
 </nav>
 
 </div>
@@ -910,12 +406,9 @@ THE FULHAM <span>INSIDER</span>
 🚨 BREAKING
 </div>
 
-<div class="breaking-text" id="breakingText">
-Fulham latest news
+<div class="breaking-text">
+Fulham have made an offer for Aaron Wan-Bissaka on an initial loan.
 </div>
-
-<button onclick="previousStory()">‹</button>
-<button onclick="nextStory()">›</button>
 
 </div>
 
@@ -926,15 +419,15 @@ Fulham latest news
 <section class="hero">
 
 <span class="tag">
-FULHAM TRANSFER CENTRE
+V8 • THE FULHAM INSIDER
 </span>
 
 <h1>
-The Fulham Insider
+THE FULHAM INSIDER
 </h1>
 
 <p>
-The latest Fulham transfer news, confirmed deals, rumours, match coverage and big stories.
+Fulham news, transfers, rumours, match coverage and The Insider's view.
 </p>
 
 <div class="meta">
@@ -943,33 +436,33 @@ UPDATED 13 AUGUST 2026
 
 </section>
 
-<section class="section">
+<section class="section" id="news">
 
 <h2 class="section-title">
-⭐ The Insider's Pick
+📰 Latest News
 </h2>
 
-<div class="card">
+<div class="card latest-news">
+
+<div class="name-box">
+MADDOX ZAIDAN-JONES
+</div>
 
 <div class="card-content">
 
 <div class="category">
-⭐ FEATURED STORY
+<span class="status latest">LATEST NEWS</span>
 </div>
 
 <h3>
-What we learned from Fulham's 2–2 draw with Málaga
+Maddox Zaidan-Jones joins Fulham's U21s
 </h3>
 
 <p>
-Castagne's two assists, the promising performances of the new additions and The Insider's view from the match.
+Fulham have added talented youngster Maddox Zaidan-Jones to their Under-21 group as he continues his development within the club's pathway.
 </p>
 
-<div class="meta">
-MATCH REPORT
-</div>
-
-<button class="read-button" onclick="openArticle('malaga')">
+<button class="read-button" onclick="openArticle('maddox')">
 READ FULL STORY →
 </button>
 
@@ -979,736 +472,164 @@ READ FULL STORY →
 
 </section>
 
-<section class="section" id="news">
+<section class="section">
 
 <h2 class="section-title">
-📰 Big News
+🔥 Transfer Headlines
 </h2>
 
 <div class="news-grid">
 
-<article class="card big">
+<div class="card">
 
 <div class="name-box">
-SHEA CHARLES
+WAN-BISSAKA
 </div>
 
 <div class="card-content">
 
 <div class="category">
-🟢 CONFIRMED
+<span class="status ongoing">
+ONGOING TALKS
+</span>
 </div>
 
 <h3>
-Fulham complete Shea Charles signing
+Fulham make loan offer for Aaron Wan-Bissaka
 </h3>
 
 <p>
-The Northern Ireland midfielder has joined Fulham from Southampton.
+Fulham have made an offer for the West Ham right-back, with the deal reportedly structured as an initial loan.
 </p>
 
-<button class="read-button" onclick="openArticle('shea')">
+<button class="read-button" onclick="openArticle('wan')">
 READ FULL STORY →
 </button>
 
 </div>
 
-</article>
+</div>
 
-<article class="card">
+<div class="card">
 
 <div class="name-box">
-GONZALO GARCÍA
+HÉCTOR FORT
 </div>
 
 <div class="card-content">
 
 <div class="category">
-🟢 CONFIRMED
+<span class="status strong">
+STRONG INTEREST
+</span>
 </div>
 
 <h3>
-Gonzalo García joins Fulham
+Fulham show strong interest in Héctor Fort
 </h3>
 
 <p>
-The forward has joined Fulham from Real Madrid.
+Fulham have been linked with Barcelona's young full-back.
 </p>
 
-<button class="read-button" onclick="openArticle('gonzalo')">
+<button class="read-button" onclick="openArticle('fort')">
 READ FULL STORY →
 </button>
 
 </div>
 
-</article>
+</div>
 
-<article class="card">
+<div class="card">
 
 <div class="name-box">
-CÉSAR PALACIOS
+MÁLAGA 2–2
 </div>
 
 <div class="card-content">
 
 <div class="category">
-🟢 CONFIRMED
-</div>
-
-<h3>
-César Palacios joins Fulham
-</h3>
-
-<p>
-The midfielder has joined Fulham from Real Madrid.
-</p>
-
-<button class="read-button" onclick="openArticle('palacios')">
-READ FULL STORY →
-</button>
-
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-<!-- PART 1 ENDS HERE -->
-<!-- PASTE PART 2 DIRECTLY BELOW THIS LINE -->
-<section class="section" id="matches">
-
-<h2 class="section-title">
-🏟️ Match Centre
-</h2>
-
-<div class="match-grid">
-
-<div class="match-card">
-
-<div class="match-main">
-
-<div class="match-label">
-PRE-SEASON FRIENDLY • FULL TIME
-</div>
-
-<div class="teams">
-
-<div class="team">
-MÁLAGA
-</div>
-
-<div class="score">
-2–2
-</div>
-
-<div class="team">
-FULHAM
-</div>
-
-</div>
-
-<div class="match-sub">
-12 AUGUST 2026 • ESTADIO LA ROSALEDA
-</div>
-
-</div>
-
-<div class="match-info">
-
-<div class="info-box">
-<strong>Competition</strong>
-<span>Pre-season Friendly</span>
-</div>
-
-<div class="info-box">
-<strong>Result</strong>
-<span>Draw</span>
-</div>
-
-<div class="info-box">
-<strong>Status</strong>
-<span>Full Time</span>
-</div>
-
-</div>
-
-<div class="timeline">
-
-<div class="timeline-row">
-<div class="timeline-time">MATCH</div>
-<div class="timeline-event">
-Málaga 2–2 Fulham
-</div>
-</div>
-
-<div class="timeline-row">
-<div class="timeline-time">NOTE</div>
-<div class="timeline-event">
-Full match events will only be shown when verified by a reliable source.
-</div>
-</div>
-
-</div>
-
-<button class="read-button" onclick="openArticle('malaga')">
-READ FULL MATCH REPORT →
-</button>
-
-</div>
-
-
-<div class="next-match">
-
-<div class="match-main">
-
-<div class="match-label">
-🔜 NEXT MATCH
-</div>
-
-<div class="teams">
-
-<div class="team">
-FULHAM
-</div>
-
-<div class="score">
-VS
-</div>
-
-<div class="team">
-STUTTGART
-</div>
-
-</div>
-
-<div class="match-sub">
-15 AUGUST 2026 • 4:00 PM • CRAVEN COTTAGE
-</div>
-
-</div>
-
-<div class="match-info">
-
-<div class="info-box">
-<strong>Competition</strong>
-<span>Pre-season Friendly</span>
-</div>
-
-<div class="info-box">
-<strong>Venue</strong>
-<span>Craven Cottage</span>
-</div>
-
-<div class="info-box">
-<strong>Kick-off</strong>
-<span>4:00 PM</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-📊 Málaga Match Stats
-</h2>
-
-<div class="stats-table">
-
-<div class="stat-row">
-<div>STAT</div>
-<div>MÁLAGA</div>
-<div>FULHAM</div>
-</div>
-
-<div class="stat-row">
-<div>Possession</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-row">
-<div>Shots</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-row">
-<div>Shots on target</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-row">
-<div>Corners</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-row">
-<div>Fouls</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-row">
-<div>Offsides</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-row">
-<div>xG</div>
-<div>TBC</div>
-<div>TBC</div>
-</div>
-
-<div class="stat-note">
-If reliable statistics are unavailable, The Fulham Insider displays TBC rather than guessing.
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-🏆 The Insider's Rankings
-</h2>
-
-<p style="color:#666;font-size:13px;margin:-8px 0 18px;">
-The Insider's top five performers from the Málaga match.
-</p>
-
-<div class="rankings">
-
-<div class="rank">
-
-<div class="rank-number">
-1
-</div>
-
-<div class="rank-player">
-Castagne
-</div>
-
-<div class="rank-note">
-The Insider's No.1
-</div>
-
-</div>
-
-
-<div class="rank">
-
-<div class="rank-number">
-2
-</div>
-
-<div class="rank-player">
-Sessegnon
-</div>
-
-<div class="rank-note">
-The Insider's No.2
-</div>
-
-</div>
-
-
-<div class="rank">
-
-<div class="rank-number">
-3
-</div>
-
-<div class="rank-player">
-Iwobi
-</div>
-
-<div class="rank-note">
-The Insider's No.3
-</div>
-
-</div>
-
-
-<div class="rank">
-
-<div class="rank-number">
-4
-</div>
-
-<div class="rank-player">
-Palacios
-</div>
-
-<div class="rank-note">
-The Insider's No.4
-</div>
-
-</div>
-
-
-<div class="rank">
-
-<div class="rank-number">
-5
-</div>
-
-<div class="rank-player">
-Robinson
-</div>
-
-<div class="rank-note">
-The Insider's No.5
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-👀 The Insider's Take
-</h2>
-
-<div class="insider-grid">
-
-<div class="insider-card">
-
-<span class="status match-status">
-MATCH OBSERVATION
+<span class="status confirmed">
+MATCH REPORT
 </span>
+</div>
 
 <h3>
-Castagne was class
+Fulham draw 2–2 with Málaga
 </h3>
 
 <p>
-Timothy Castagne was one of Fulham's standout performers according to The Insider's match observation, providing two assists.
-</p>
-
-</div>
-
-
-<div class="insider-card">
-
-<span class="status match-status">
-MATCH OBSERVATION
-</span>
-
-<h3>
-New additions impressed
-</h3>
-
-<p>
-Shea Charles and César Palacios both impressed, while Calvin Bassey also stood out.
-</p>
-
-</div>
-
-
-<div class="insider-card">
-
-<span class="status match-status">
-MATCH OBSERVATION
-</span>
-
-<h3>
-A positive pre-season test
-</h3>
-
-<p>
-The 2–2 draw gave Arbeloa another opportunity to assess his squad before the final friendly against Stuttgart.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-🧠 What We Learned
-</h2>
-
-<div class="takeaway-grid">
-
-<div class="takeaway">
-
-<h3>
-1. Castagne can make a difference going forward
-</h3>
-
-<p>
-Two assists made Castagne one of the most influential Fulham players in the match.
-</p>
-
-</div>
-
-
-<div class="takeaway">
-
-<h3>
-2. The new midfield options are exciting
-</h3>
-
-<p>
-Charles and Palacios give Arbeloa additional options as he prepares for the new season.
-</p>
-
-</div>
-
-
-<div class="takeaway">
-
-<h3>
-3. Bassey continues to impress
-</h3>
-
-<p>
-The Insider's match observation rated Bassey among Fulham's strongest performers.
-</p>
-
-</div>
-
-
-<div class="takeaway">
-
-<h3>
-4. Stuttgart is next
-</h3>
-
-<p>
-Fulham's final pre-season friendly is against VfB Stuttgart at Craven Cottage.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-📅 Match Archive
-</h2>
-
-<div class="archive">
-
-<div class="archive-card">
-
-<span class="status match-status">
-LATEST
-</span>
-
-<h3>
-Málaga 2–2 Fulham
-</h3>
-
-<div class="archive-score">
-2–2
-</div>
-
-<p>
-12 August 2026 • Pre-season Friendly
+Castagne produced two assists as Fulham drew their friendly against Málaga.
 </p>
 
 <button class="read-button" onclick="openArticle('malaga')">
-MATCH CENTRE →
+READ FULL STORY →
 </button>
 
 </div>
-
-
-<div class="archive-card">
-
-<span class="status match-status">
-NEXT
-</span>
-
-<h3>
-Fulham vs Stuttgart
-</h3>
-
-<div class="archive-score">
-15 AUG
-</div>
-
-<p>
-15 August 2026 • 4:00 PM • Craven Cottage
-</p>
 
 </div>
 
 </div>
 
 </section>
-
 
 <section class="section">
 
 <h2 class="section-title">
-👀 Insider Reports
+📋 Transfer Status Guide
 </h2>
 
-<div class="insider-grid">
+<div class="transfer-guide">
 
-<div class="insider-card">
-
-<span class="status match-status">
-YOUR MATCH OBSERVATION
+<div class="guide">
+<strong style="color:#147536;">
+🟢 CONFIRMED
+</strong>
+<span>
+Officially completed
 </span>
-
-<h3>
-Málaga 2–2 Fulham
-</h3>
-
-<p>
-Shea Charles, César Palacios, Timothy Castagne and Calvin Bassey were among the players who impressed The Insider.
-</p>
-
-<div class="source">
-THE FULHAM INSIDER
 </div>
 
-</div>
-
-
-<div class="insider-card">
-
-<span class="status interest">
-TRANSFER WATCH
+<div class="guide">
+<strong style="color:#a00000;">
+🔴 STRONG INTEREST
+</strong>
+<span>
+Serious pursuit
 </span>
-
-<h3>
-Aaron Wan-Bissaka
-</h3>
-
-<p>
-Fulham are reportedly interested in a loan move for Wan-Bissaka, with a potential buy option being considered.
-</p>
-
-<div class="source">
-SOURCE: TRANSFERFEED
 </div>
 
+<div class="guide">
+<strong style="color:#a34600;">
+🟠 ONGOING TALKS
+</strong>
+<span>
+Active talks or offer
+</span>
+</div>
+
+<div class="guide">
+<strong style="color:#8a5b00;">
+🟡 INTEREST
+</strong>
+<span>
+Interest reported
+</span>
+</div>
+
+<div class="guide">
+<strong>
+⚪ LINKED
+</strong>
+<span>
+Early reporting
+</span>
 </div>
 
 </div>
 
 </section>
-
-
-<section class="section" id="confirmed">
-
-<h2 class="section-title">
-🟢 Confirmed Transfers
-</h2>
-
-<div class="confirmed-grid">
-
-<div class="confirmed-card">
-
-<span class="status confirmed">
-CONFIRMED
-</span>
-
-<h3>
-Shea Charles
-</h3>
-
-<p>
-Southampton → Fulham
-</p>
-
-<p>
-Five-year contract with a further option.
-</p>
-
-<button class="read-button" onclick="openArticle('shea')">
-READ FULL STORY →
-</button>
-
-</div>
-
-
-<div class="confirmed-card">
-
-<span class="status confirmed">
-CONFIRMED
-</span>
-
-<h3>
-Gonzalo García
-</h3>
-
-<p>
-Real Madrid → Fulham
-</p>
-
-<p>
-The forward has joined Fulham from Real Madrid.
-</p>
-
-<button class="read-button" onclick="openArticle('gonzalo')">
-READ FULL STORY →
-</button>
-
-</div>
-
-
-<div class="confirmed-card">
-
-<span class="status confirmed">
-CONFIRMED
-</span>
-
-<h3>
-César Palacios
-</h3>
-
-<p>
-Real Madrid → Fulham
-</p>
-
-<p>
-The midfielder has joined Fulham from Real Madrid.
-</p>
-
-<button class="read-button" onclick="openArticle('palacios')">
-READ FULL STORY →
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PART 2 ENDS HERE -->
-<!-- PASTE PART 3 DIRECTLY BELOW THIS LINE -->
 <section class="section" id="rumours">
 
 <h2 class="section-title">
@@ -1719,8 +640,8 @@ READ FULL STORY →
 
 <div class="rumour-card">
 
-<span class="status interest">
-INTEREST
+<span class="status ongoing">
+ONGOING TALKS
 </span>
 
 <h3>
@@ -1728,20 +649,49 @@ Aaron Wan-Bissaka
 </h3>
 
 <p>
-Fulham are reportedly interested in taking Aaron Wan-Bissaka on loan, with a potential option to buy being explored.
+Fulham have made an offer for the West Ham right-back on an initial loan. Reports have also suggested that a loan-to-buy structure could be explored.
 </p>
 
 <div class="source">
-SOURCE: TRANSFERFEED
+SOURCE: TRANSFERFEED / DAILY MAIL REPORTING
 </div>
+
+<button class="read-button" onclick="openArticle('wan')">
+READ FULL STORY →
+</button>
+
+</div>
+
+
+<div class="rumour-card strong-card">
+
+<span class="status strong">
+STRONG INTEREST
+</span>
+
+<h3>
+Héctor Fort
+</h3>
+
+<p>
+Fulham are monitoring Barcelona defender Héctor Fort. Recent reporting has placed Fulham among the clubs interested in the young full-back.
+</p>
+
+<div class="source">
+SOURCE: TRANSFERFEED / GUARDIAN REPORTING
+</div>
+
+<button class="read-button" onclick="openArticle('fort')">
+READ FULL STORY →
+</button>
 
 </div>
 
 
 <div class="rumour-card">
 
-<span class="status rumour">
-LINKED
+<span class="status interest">
+INTEREST
 </span>
 
 <h3>
@@ -1749,11 +699,11 @@ Manuel Ángel
 </h3>
 
 <p>
-Fulham have been linked with the Real Madrid midfielder.
+Fulham have previously been linked with the young Spanish midfielder as the club continues to explore options for the squad.
 </p>
 
 <div class="source">
-TRANSFER RUMOUR
+STATUS: INTEREST
 </div>
 
 </div>
@@ -1761,8 +711,8 @@ TRANSFER RUMOUR
 
 <div class="rumour-card">
 
-<span class="status rumour">
-LINKED
+<span class="status interest">
+INTEREST
 </span>
 
 <h3>
@@ -1770,11 +720,203 @@ Thiago Pitarch
 </h3>
 
 <p>
-The midfielder has been mentioned as a potential Fulham target.
+Fulham were previously linked with the Spanish midfielder, although the latest reporting indicates that the proposed move will not proceed.
 </p>
 
 <div class="source">
-TRANSFER RUMOUR
+STATUS: INTEREST — MOVE NOT PROCEEDING
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="outgoings">
+
+<h2 class="section-title">
+🔴 Outgoings
+</h2>
+
+<p style="color:#666;font-size:13px;margin-bottom:20px;">
+Players who have left Fulham, including permanent departures, free agents and players sent out on loan.
+</p>
+
+<div class="outgoings">
+
+
+<div class="outgoing-card permanent">
+
+<span class="status left">
+LEFT
+</span>
+
+<h3>
+Saša Lukić
+</h3>
+
+<p>
+Midfielder
+</p>
+
+<div class="outgoing-destination">
+→ Ipswich Town
+</div>
+
+<div class="outgoing-note">
+Permanent transfer
+</div>
+
+</div>
+
+
+<div class="outgoing-card permanent">
+
+<span class="status left">
+LEFT
+</span>
+
+<h3>
+Issa Diop
+</h3>
+
+<p>
+Centre-back
+</p>
+
+<div class="outgoing-destination">
+→ Ipswich Town
+</div>
+
+<div class="outgoing-note">
+Permanent transfer
+</div>
+
+</div>
+
+
+<div class="outgoing-card permanent">
+
+<span class="status left">
+LEFT
+</span>
+
+<h3>
+Harry Wilson
+</h3>
+
+<p>
+Winger
+</p>
+
+<div class="outgoing-destination">
+→ Leeds United
+</div>
+
+<div class="outgoing-note">
+Permanent transfer
+</div>
+
+</div>
+
+
+<div class="outgoing-card permanent">
+
+<span class="status left">
+LEFT
+</span>
+
+<h3>
+Raúl Jiménez
+</h3>
+
+<p>
+Striker
+</p>
+
+<div class="outgoing-destination">
+→ Wolverhampton Wanderers
+</div>
+
+<div class="outgoing-note">
+Permanent transfer
+</div>
+
+</div>
+
+
+<div class="outgoing-card permanent">
+
+<span class="status left">
+LEFT
+</span>
+
+<h3>
+Jon Esenga
+</h3>
+
+<p>
+Defender
+</p>
+
+<div class="outgoing-destination">
+→ IF Elfsborg
+</div>
+
+<div class="outgoing-note">
+Permanent departure
+</div>
+
+</div>
+
+
+<div class="outgoing-card free-agent">
+
+<span class="status left">
+FREE AGENT
+</span>
+
+<h3>
+Steven Benda
+</h3>
+
+<p>
+Goalkeeper
+</p>
+
+<div class="outgoing-destination">
+→ Free Agent
+</div>
+
+<div class="outgoing-note">
+No new club listed
+</div>
+
+</div>
+
+
+<div class="outgoing-card loan-card">
+
+<span class="status loan">
+LOAN
+</span>
+
+<h3>
+Alfie McNally
+</h3>
+
+<p>
+Goalkeeper
+</p>
+
+<div class="outgoing-destination">
+→ York City
+</div>
+
+<div class="outgoing-note">
+Season-long loan • 2026/27
 </div>
 
 </div>
@@ -1787,60 +929,37 @@ TRANSFER RUMOUR
 <section class="section" id="transfers">
 
 <h2 class="section-title">
-🔄 Transfer Tracker
+🔄 Transfer Board
 </h2>
 
 <div class="tracker">
 
 <div class="tracker-card">
-
-<div class="tracker-number">
-3
-</div>
-
+<div class="tracker-number">3</div>
 <div class="tracker-label">
 CONFIRMED ARRIVALS
 </div>
-
 </div>
-
 
 <div class="tracker-card">
-
-<div class="tracker-number">
-1
-</div>
-
+<div class="tracker-number">2</div>
 <div class="tracker-label">
-ACTIVE INTEREST
+ACTIVE TARGETS
 </div>
-
 </div>
-
 
 <div class="tracker-card">
-
-<div class="tracker-number">
-2
-</div>
-
+<div class="tracker-number">7</div>
 <div class="tracker-label">
-OTHER LINKS
+OUTGOINGS
 </div>
-
 </div>
-
 
 <div class="tracker-card">
-
-<div class="tracker-number">
-2026/27
-</div>
-
+<div class="tracker-number">26/27</div>
 <div class="tracker-label">
-TRANSFER WINDOW
+SEASON
 </div>
-
 </div>
 
 </div>
@@ -1849,25 +968,73 @@ TRANSFER WINDOW
 <div class="transfer-box">
 
 <div class="transfer-header">
+<div>PLAYER</div>
+<div>FROM</div>
+<div>TO</div>
+<div>TYPE</div>
+<div>STATUS</div>
+</div>
+
+
+<div class="transfer">
 
 <div>
-PLAYER
+<div class="player">
+Aaron Wan-Bissaka
+</div>
+<div class="club">
+Right-back
+</div>
+</div>
+
+<div class="club">
+West Ham United
+</div>
+
+<div class="club">
+Fulham
+</div>
+
+<div class="position">
+Loan
 </div>
 
 <div>
-FROM
+<span class="status ongoing">
+ONGOING TALKS
+</span>
+</div>
+
+</div>
+
+
+<div class="transfer">
+
+<div>
+<div class="player">
+Héctor Fort
+</div>
+<div class="club">
+Right-back
+</div>
+</div>
+
+<div class="club">
+Barcelona
+</div>
+
+<div class="club">
+Fulham
+</div>
+
+<div class="position">
+Permanent TBC
 </div>
 
 <div>
-TO
-</div>
-
-<div>
-TYPE
-</div>
-
-<div>
-STATUS
+<span class="status strong">
+STRONG INTEREST
+</span>
 </div>
 
 </div>
@@ -1879,7 +1046,6 @@ STATUS
 <div class="player">
 Shea Charles
 </div>
-
 <div class="club">
 Midfielder
 </div>
@@ -1912,7 +1078,6 @@ CONFIRMED
 <div class="player">
 Gonzalo García
 </div>
-
 <div class="club">
 Forward
 </div>
@@ -1945,7 +1110,6 @@ CONFIRMED
 <div class="player">
 César Palacios
 </div>
-
 <div class="club">
 Midfielder
 </div>
@@ -1971,35 +1135,151 @@ CONFIRMED
 
 </div>
 
-
-<div class="transfer">
-
-<div>
-<div class="player">
-Aaron Wan-Bissaka
 </div>
 
-<div class="club">
-Right-back
-</div>
+</section>
+
+
+<section class="section" id="matches">
+
+<h2 class="section-title">
+🏟️ Match Centre
+</h2>
+
+<div class="match-grid">
+
+
+<div class="match-card">
+
+<div class="match-main">
+
+<div class="match-label">
+PRE-SEASON FRIENDLY
 </div>
 
-<div class="club">
-West Ham
+<div class="teams">
+
+<div class="team">
+MÁLAGA
 </div>
 
-<div class="club">
-Fulham
+<div class="score">
+2–2
 </div>
 
-<div class="position">
-Loan + buy option
+<div class="team">
+FULHAM
 </div>
 
-<div>
-<span class="status interest">
-INTEREST
+</div>
+
+<div class="match-sub">
+FULL TIME
+</div>
+
+</div>
+
+
+<div class="match-info">
+
+<div class="info-box">
+<strong>POSSESSION</strong>
+<span>
+Málaga — / Fulham —
 </span>
+</div>
+
+<div class="info-box">
+<strong>SHOTS</strong>
+<span>
+Málaga — / Fulham —
+</span>
+</div>
+
+<div class="info-box">
+<strong>SHOTS ON TARGET</strong>
+<span>
+Málaga — / Fulham —
+</span>
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-row">
+<div class="timeline-time">
+FT
+</div>
+
+<div class="timeline-event">
+Fulham finish the friendly with a 2–2 draw.
+</div>
+</div>
+
+<div class="timeline-row">
+<div class="timeline-time">
+⭐
+</div>
+
+<div class="timeline-event">
+Castagne produces two assists.
+</div>
+</div>
+
+<div class="timeline-row">
+<div class="timeline-time">
+👑
+</div>
+
+<div class="timeline-event">
+The Insider's Rankings: Castagne, Sessegnon, Iwobi, Palacios, Robinson.
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="next-match">
+
+<div class="match-label">
+NEXT MATCH
+</div>
+
+<h3 style="font-size:30px;margin-bottom:12px;">
+STUTTGART
+</h3>
+
+<p style="color:#aaa;font-size:13px;">
+Fulham's next pre-season friendly.
+</p>
+
+<div class="match-info">
+
+<div class="info-box">
+<strong>TYPE</strong>
+<span>
+Friendly
+</span>
+</div>
+
+<div class="info-box">
+<strong>DATE</strong>
+<span>
+TBC
+</span>
+</div>
+
+<div class="info-box">
+<strong>VENUE</strong>
+<span>
+TBC
+</span>
+</div>
+
 </div>
 
 </div>
@@ -2012,469 +1292,505 @@ INTEREST
 <section class="section">
 
 <h2 class="section-title">
-💡 The Insider's Notes
+🏆 The Insider's Rankings
 </h2>
 
 <div class="insider-note">
-
-<strong>
-IMPORTANT:
-</strong>
-
-Transfer interest is not the same as a completed transfer.
-
-The Insider will label deals as <strong>CONFIRMED</strong> only when there is reliable confirmation. Reported interest, negotiations and rumours will remain clearly marked.
-
+The Insider's Rankings are our five standout players from the match, rather than individual player ratings.
 </div>
 
-<div class="insider-note">
+<div class="rankings">
 
-<strong>
-MATCH COVERAGE:
-</strong>
+<div class="rank">
+<div class="rank-number">
+1
+</div>
+<div class="rank-player">
+Castagne
+</div>
+<div class="rank-note">
+Two assists
+</div>
+</div>
 
-Match observations supplied by The Insider are clearly separated from externally sourced statistics. Where reliable match statistics cannot be verified, the website uses <strong>TBC</strong> rather than inventing numbers.
+
+<div class="rank">
+<div class="rank-number">
+2
+</div>
+<div class="rank-player">
+Sessegnon
+</div>
+<div class="rank-note">
+Standout performance
+</div>
+</div>
+
+
+<div class="rank">
+<div class="rank-number">
+3
+</div>
+<div class="rank-player">
+Iwobi
+</div>
+<div class="rank-note">
+Strong display
+</div>
+</div>
+
+
+<div class="rank">
+<div class="rank-number">
+4
+</div>
+<div class="rank-player">
+Palacios
+</div>
+<div class="rank-note">
+Impressive showing
+</div>
+</div>
+
+
+<div class="rank">
+<div class="rank-number">
+5
+</div>
+<div class="rank-player">
+Robinson
+</div>
+<div class="rank-note">
+Solid performance
+</div>
+</div>
 
 </div>
 
 </section>
+<!-- FULL STORY OVERLAY -->
+
+<div class="article-overlay" id="articleOverlay">
+
+    <div class="article-header">
+
+        <div class="article-header-inner">
+
+            <div class="article-logo">
+                THE FULHAM <span>INSIDER</span>
+            </div>
+
+            <button class="close-button" onclick="closeArticle()">
+                ✕ CLOSE
+            </button>
+
+        </div>
+
+    </div>
 
 
-<div id="articleOverlay" class="article-overlay">
+    <article class="article">
 
-<div class="article-header">
+        <div class="tag" id="articleTag">
+            THE FULHAM INSIDER
+        </div>
 
-<div class="article-header-inner">
+        <h1 id="articleTitle">
+            Story
+        </h1>
 
-<div class="article-logo">
-THE FULHAM <span>INSIDER</span>
-</div>
+        <p class="article-intro" id="articleIntro">
+            Story information
+        </p>
 
-<button
-class="close-button"
-onclick="closeArticle()">
-✕ CLOSE STORY
-</button>
+        <div class="meta" id="articleMeta">
+            THE FULHAM INSIDER
+        </div>
 
-</div>
+        <div class="article-body" id="articleBody">
+        </div>
 
-</div>
+        <a href="#" class="back-button" onclick="closeArticle(); return false;">
+            ← BACK TO THE INSIDER
+        </a>
 
-
-<article id="articleContent" class="article">
-</article>
+    </article>
 
 </div>
 
 
 <footer>
 
-<div class="footer-logo">
-THE FULHAM <span>INSIDER</span>
-</div>
+    <div class="footer-logo">
+        THE FULHAM <span>INSIDER</span>
+    </div>
 
-<p>
-Independent Fulham news, transfers and match coverage.
-</p>
+    <p>
+        Independent Fulham news, transfers and match coverage.
+    </p>
 
-<p>
-© 2026 The Fulham Insider
-</p>
+    <p>
+        V8 • 2026/27
+    </p>
 
 </footer>
 
 
 <script>
 
-const articles = {
-
-malaga: {
-
-category:"MATCH REPORT",
-
-title:"Málaga 2–2 Fulham: Castagne shines as Fulham draw in Spain",
-
-intro:"Fulham played out an entertaining 2–2 draw with Málaga in pre-season, with Timothy Castagne providing two assists.",
-
-body:`
-
-<h2>The Match</h2>
-
-<p>
-Fulham drew 2–2 with Málaga in their latest pre-season friendly.
-</p>
-
-<p>
-The match provided another opportunity for the squad to build fitness and for the coaching staff to assess the team's options ahead of the new season.
-</p>
-
-<h2>The Standout Performers</h2>
-
-<p>
-Timothy Castagne was The Insider's standout performer. The Fulham full-back produced two assists and was heavily involved in Fulham's attacking play.
-</p>
-
-<p>
-Sessegnon, Iwobi, Palacios and Robinson also featured in The Insider's top five performers from the match.
-</p>
-
-<h2>The Insider's Rankings</h2>
-
-<p>
-1. Castagne<br>
-2. Sessegnon<br>
-3. Iwobi<br>
-4. Palacios<br>
-5. Robinson
-</p>
-
-<h2>The Bigger Picture</h2>
-
-<p>
-The 2–2 draw gives Fulham another useful pre-season test before their next friendly against Stuttgart.
-</p>
-
-`,
-
-sources:`
-
-<h3>Sources</h3>
-
-<p>
-Match observations: The Fulham Insider.
-</p>
-
-<p>
-External statistics will be added only when they can be reliably verified.
-</p>
-
-`
-
-},
-
-
-shea: {
-
-category:"CONFIRMED TRANSFER",
-
-title:"Fulham complete Shea Charles signing",
-
-intro:"Fulham have completed the signing of midfielder Shea Charles.",
-
-body:`
-
-<h2>The Deal</h2>
-
-<p>
-Fulham have added Shea Charles to their midfield options ahead of the new season.
-</p>
-
-<p>
-The move gives Fulham another young midfielder capable of competing for a place in the squad.
-</p>
-
-<h2>Why It Matters</h2>
-
-<p>
-Charles adds energy and versatility to Fulham's midfield and provides another option for the coaching staff.
-</p>
-
-<h2>The Insider's View</h2>
-
-<p>
-The signing fits Fulham's approach of adding young players who can develop while contributing to the first team.
-</p>
-
-`,
-
-sources:`
-
-<h3>Sources</h3>
-
-<p>
-Fulham official communications and reputable transfer reporting.
-</p>
-
-`
-
-},
-
-
-gonzalo: {
-
-category:"CONFIRMED TRANSFER",
-
-title:"Gonzalo García joins Fulham",
-
-intro:"Fulham have added Gonzalo García to their attacking options.",
-
-body:`
-
-<h2>The Transfer</h2>
-
-<p>
-Gonzalo García has joined Fulham from Real Madrid.
-</p>
-
-<p>
-The forward arrives with significant potential and gives Fulham another attacking option.
-</p>
-
-<h2>What He Adds</h2>
-
-<p>
-His movement and attacking ability provide another dimension to Fulham's forward line.
-</p>
-
-<h2>The Insider's View</h2>
-
-<p>
-This is one of the most exciting additions to the squad and one The Insider will be watching closely during the new season.
-</p>
-
-`,
-
-sources:`
-
-<h3>Sources</h3>
-
-<p>
-Official club communications and reputable transfer reporting.
-</p>
-
-`
-
-},
-
-
-palacios: {
-
-category:"CONFIRMED TRANSFER",
-
-title:"César Palacios joins Fulham",
-
-intro:"Fulham have added César Palacios to their midfield options.",
-
-body:`
-
-<h2>The Deal</h2>
-
-<p>
-César Palacios has joined Fulham from Real Madrid.
-</p>
-
-<p>
-The midfielder gives Fulham another technically gifted option in the centre of the pitch.
-</p>
-
-<h2>Why It Matters</h2>
-
-<p>
-Palacios provides additional competition in midfield and gives the coaching staff another player capable of progressing the ball.
-</p>
-
-<h2>The Insider's View</h2>
-
-<p>
-Palacios was also one of The Insider's five standout players from Fulham's 2–2 draw with Málaga.
-</p>
-
-`,
-
-sources:`
-
-<h3>Sources</h3>
-
-<p>
-Official club communications and reputable transfer reporting.
-</p>
-
-`
-
-}
+const stories = {
+
+    maddox: {
+        tag: "LATEST NEWS",
+        title: "Maddox Zaidan-Jones joins Fulham's U21s",
+        intro: "Fulham have added talented youngster Maddox Zaidan-Jones to their Under-21 group.",
+        meta: "LATEST NEWS • ACADEMY",
+        body: `
+            <h2>A new addition to the pathway</h2>
+
+            <p>
+                Fulham have added Maddox Zaidan-Jones to their U21 setup as the youngster continues his development.
+            </p>
+
+            <p>
+                Zaidan-Jones is a midfielder and has represented the Turks and Caicos Islands at international level.
+            </p>
+
+            <p>
+                The move gives him the opportunity to continue his development within Fulham's academy structure.
+            </p>
+
+            <div class="sources">
+                <h3>SOURCES</h3>
+                <a href="https://www.espn.co.uk/football/player/_/id/391064/maddox-zaidan-jones" target="_blank">
+                    ESPN — Maddox Zaidan-Jones profile
+                </a>
+            </div>
+        `
+    },
+
+
+    wan: {
+        tag: "ONGOING TALKS",
+        title: "Fulham make offer for Aaron Wan-Bissaka",
+        intro: "Fulham are pursuing an initial loan move for West Ham right-back Aaron Wan-Bissaka.",
+        meta: "TRANSFER NEWS • ONGOING TALKS",
+        body: `
+            <h2>Fulham make an approach</h2>
+
+            <p>
+                Fulham are interested in bringing Aaron Wan-Bissaka to Craven Cottage, with TransferFeed reporting that the club have made an offer for an initial loan.
+            </p>
+
+            <p>
+                The proposed structure is being explored as a loan rather than an immediate permanent transfer. Earlier reporting has also pointed towards a possible loan-to-buy arrangement.
+            </p>
+
+            <p>
+                Wan-Bissaka brings significant Premier League experience and would provide another option at right-back.
+            </p>
+
+            <h2>The situation</h2>
+
+            <p>
+                This is not a confirmed transfer. Talks and negotiations can still change, so The Insider currently lists the situation as <strong>ONGOING TALKS</strong>.
+            </p>
+
+            <div class="sources">
+                <h3>SOURCES</h3>
+
+                <a href="https://www.transferfeed.com/transfers/aaron-wan-bissaka-west-ham-united-fulham/39105266" target="_blank">
+                    TransferFeed — Aaron Wan-Bissaka to Fulham
+                </a>
+
+                <a href="https://www.theguardian.com/football/2026/aug/12/football-transfer-rumours-folarin-balogun-to-tottenham-gabriel-jesus-to-napoli" target="_blank">
+                    The Guardian — Transfer rumours
+                </a>
+            </div>
+        `
+    },
+
+
+    fort: {
+        tag: "STRONG INTEREST",
+        title: "Fulham monitoring Héctor Fort",
+        intro: "Fulham are among the clubs interested in Barcelona defender Héctor Fort.",
+        meta: "TRANSFER NEWS • STRONG INTEREST",
+        body: `
+            <h2>Interest in the Barcelona defender</h2>
+
+            <p>
+                Fulham are monitoring Héctor Fort as they continue to assess options at full-back.
+            </p>
+
+            <p>
+                The 20-year-old Barcelona defender has been linked with a move away from the Catalan club, with Fulham among the sides reported to be interested.
+            </p>
+
+            <p>
+                The Guardian's latest transfer round-up also reports that Fulham like the look of Fort, who spent last season on loan at Elche.
+            </p>
+
+            <h2>The Insider's status</h2>
+
+            <p>
+                There is interest, but this is not a done deal. The Insider therefore lists Fort as <strong>STRONG INTEREST</strong> rather than ongoing negotiations or confirmed.
+            </p>
+
+            <div class="sources">
+                <h3>SOURCES</h3>
+
+                <a href="https://www.theguardian.com/football/2026/aug/12/football-transfer-rumours-folarin-balogun-to-tottenham-gabriel-jesus-to-napoli" target="_blank">
+                    The Guardian — Fulham and Héctor Fort
+                </a>
+            </div>
+        `
+    },
+
+
+    malaga: {
+        tag: "MATCH REPORT",
+        title: "Málaga 2–2 Fulham",
+        intro: "Fulham drew 2–2 with Málaga in pre-season.",
+        meta: "MATCH CENTRE • PRE-SEASON",
+        body: `
+            <h2>Fulham held to a draw</h2>
+
+            <p>
+                Fulham drew 2–2 with Málaga in their pre-season friendly.
+            </p>
+
+            <p>
+                From The Insider's own match observations, Timothy Castagne was one of Fulham's standout performers and produced two assists.
+            </p>
+
+            <h2>The Insider's Rankings</h2>
+
+            <p>
+                1. Castagne
+            </p>
+
+            <p>
+                2. Sessegnon
+            </p>
+
+            <p>
+                3. Iwobi
+            </p>
+
+            <p>
+                4. Palacios
+            </p>
+
+            <p>
+                5. Robinson
+            </p>
+
+            <h2>Match statistics</h2>
+
+            <p>
+                Possession: Málaga — / Fulham —
+            </p>
+
+            <p>
+                Shots: Málaga — / Fulham —
+            </p>
+
+            <p>
+                Shots on target: Málaga — / Fulham —
+            </p>
+
+            <p>
+                Official statistical data that we cannot verify is deliberately left blank rather than guessed.
+            </p>
+        `
+    },
+
+
+    shea: {
+        tag: "CONFIRMED",
+        title: "Shea Charles joins Fulham",
+        intro: "Fulham have completed the signing of midfielder Shea Charles.",
+        meta: "CONFIRMED TRANSFER",
+        body: `
+            <h2>Welcome to Fulham, Shea</h2>
+
+            <p>
+                Shea Charles has joined Fulham as the club continues to strengthen its midfield options.
+            </p>
+
+            <p>
+                The Northern Ireland international arrives with experience in English football and adds another option to the squad.
+            </p>
+
+            <p>
+                This transfer is listed as confirmed by The Insider.
+            </p>
+        `
+    },
+
+
+    gonzalo: {
+        tag: "CONFIRMED",
+        title: "Gonzalo García joins Fulham",
+        intro: "Fulham have brought Gonzalo García to the club from Real Madrid.",
+        meta: "CONFIRMED TRANSFER",
+        body: `
+            <h2>A new attacking option</h2>
+
+            <p>
+                Gonzalo García has joined Fulham from Real Madrid.
+            </p>
+
+            <p>
+                The forward arrives as part of Fulham's summer squad rebuild and gives the club another attacking option.
+            </p>
+
+            <p>
+                The Insider lists the move as confirmed.
+            </p>
+        `
+    },
+
+
+    palacios: {
+        tag: "CONFIRMED",
+        title: "César Palacios joins Fulham",
+        intro: "Fulham have added César Palacios to their midfield options.",
+        meta: "CONFIRMED TRANSFER",
+        body: `
+            <h2>Palacios arrives</h2>
+
+            <p>
+                César Palacios has joined Fulham from Real Madrid.
+            </p>
+
+            <p>
+                The midfielder becomes another young option in Fulham's developing squad.
+            </p>
+
+            <p>
+                The Insider lists the transfer as confirmed.
+            </p>
+        `
+    }
 
 };
 
 
-function openArticle(id){
+function openArticle(storyId) {
 
-const article = articles[id];
+    const story = stories[storyId];
 
-if(!article){
-return;
-}
+    if (!story) {
+        return;
+    }
 
-const content = document.getElementById("articleContent");
+    document.getElementById("articleTag").textContent = story.tag;
 
-content.innerHTML = `
+    document.getElementById("articleTitle").textContent = story.title;
 
-<div class="category">
-${article.category}
-</div>
+    document.getElementById("articleIntro").textContent = story.intro;
 
-<h1>
-${article.title}
-</h1>
+    document.getElementById("articleMeta").textContent = story.meta;
 
-<div class="article-intro">
-${article.intro}
-</div>
+    document.getElementById("articleBody").innerHTML = story.body;
 
-<div class="meta">
-THE FULHAM INSIDER • 2026
-</div>
+    document.getElementById("articleOverlay").classList.add("active");
 
-<div class="article-body">
+    document.body.style.overflow = "hidden";
 
-${article.body}
-
-<div class="sources">
-${article.sources}
-</div>
-
-<a
-href="#"
-class="back-button"
-onclick="closeArticle();return false;">
-← BACK TO THE FULHAM INSIDER
-</a>
-
-</div>
-
-`;
-
-document
-.getElementById("articleOverlay")
-.classList.add("active");
-
-document.body.style.overflow="hidden";
-
-history.pushState(
-{article:id},
-"",
-"#story-"+id
-);
-
+    window.scrollTo(0, 0);
 }
 
 
-function closeArticle(){
+function closeArticle() {
 
-document
-.getElementById("articleOverlay")
-.classList.remove("active");
+    document.getElementById("articleOverlay").classList.remove("active");
 
-document.body.style.overflow="auto";
-
-if(location.hash.startsWith("#story-")){
-
-history.pushState(
-{},
-"",
-location.pathname+location.search
-);
-
-}
-
+    document.body.style.overflow = "auto";
 }
 
 
-window.addEventListener(
-"popstate",
-function(){
+document.addEventListener("keydown", function(event) {
 
-document
-.getElementById("articleOverlay")
-.classList.remove("active");
+    if (event.key === "Escape") {
 
-document.body.style.overflow="auto";
+        closeArticle();
 
-}
-);
+    }
+
+});
 
 
-const breakingStories=[
+const breakingStories = [
 
-"Fulham draw 2–2 with Málaga in pre-season",
+    "Fulham have made an offer for Aaron Wan-Bissaka on an initial loan.",
 
-"Timothy Castagne provides two assists",
+    "Maddox Zaidan-Jones joins Fulham's U21s.",
 
-"Fulham interested in Aaron Wan-Bissaka",
+    "Fulham are monitoring Héctor Fort.",
 
-"Stuttgart are next up for Fulham"
+    "Fulham draw 2–2 with Málaga."
 
 ];
 
-let breakingIndex=0;
+let breakingIndex = 0;
 
 
-function updateBreaking(){
+function showBreakingStory() {
 
-document.getElementById("breakingText").textContent=
-breakingStories[breakingIndex];
+    const element = document.getElementById("breakingText");
 
-}
+    if (!element) {
+        return;
+    }
 
-
-function nextStory(){
-
-breakingIndex++;
-
-if(breakingIndex>=breakingStories.length){
-breakingIndex=0;
-}
-
-updateBreaking();
+    element.textContent = breakingStories[breakingIndex];
 
 }
 
 
-function previousStory(){
+function nextStory() {
 
-breakingIndex--;
+    breakingIndex++;
 
-if(breakingIndex<0){
-breakingIndex=breakingStories.length-1;
-}
+    if (breakingIndex >= breakingStories.length) {
+        breakingIndex = 0;
+    }
 
-updateBreaking();
-
-}
-
-
-updateBreaking();
-
-
-if(location.hash.startsWith("#story-")){
-
-const storyId=
-location.hash.replace("#story-","");
-
-if(articles[storyId]){
-
-setTimeout(
-function(){
-openArticle(storyId);
-},
-100
-);
+    showBreakingStory();
 
 }
 
+
+function previousStory() {
+
+    breakingIndex--;
+
+    if (breakingIndex < 0) {
+        breakingIndex = breakingStories.length - 1;
+    }
+
+    showBreakingStory();
+
 }
+
+
+showBreakingStory();
 
 </script>
 
 
-<!-- Cloudflare Web Analytics -->
+<!-- CLOUDFLARE WEB ANALYTICS -->
 
 <script
 type="module"
 src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"e0a63b79e8264f1b863b1dd9b7192006"}'>
+data-cf-beacon='{"token": "e0a63b79e8264f1b863b1dd9b7192006"}'>
 </script>
 
-<!-- End Cloudflare Web Analytics -->
+<!-- END CLOUDFLARE WEB ANALYTICS -->
 
 </body>
 </html>
