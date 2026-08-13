@@ -1308,99 +1308,105 @@ Sky Sports — Fulham transfer coverage
 
 </div>
 
-<a href="#" class="back-button"
+<a
+href="#"
+class="back-button"
 onclick="closeArticle();return false;">
 ← BACK TO THE FULHAM INSIDER
 </a>
 
 </div>
+
 `;
 
-document.getElementById("articleOverlay")
+document
+.getElementById("articleOverlay")
 .classList.add("active");
 
-document.body.style.overflow="hidden";
+document.body.style.overflow = "hidden";
 
-history.pushState(
-{article:id},
-"",
-"#story-"+id
+if (!location.hash.startsWith("#story-")) {
+    history.pushState(
+        { article: id },
+        "",
+        "#story-" + id
+    );
+}
+
+}
+
+
+function closeArticle() {
+
+document
+.getElementById("articleOverlay")
+.classList.remove("active");
+
+document.body.style.overflow = "auto";
+
+if (location.hash.startsWith("#story-")) {
+
+    history.pushState(
+        {},
+        "",
+        location.pathname + location.search
+    );
+
+}
+
+}
+
+
+window.addEventListener(
+"popstate",
+function () {
+
+if (
+document
+.getElementById("articleOverlay")
+.classList.contains("active")
+) {
+
+document
+.getElementById("articleOverlay")
+.classList.remove("active");
+
+document.body.style.overflow = "auto";
+
+}
+
+});
+
+
+if (location.hash.startsWith("#story-")) {
+
+const id =
+location.hash.replace("#story-", "");
+
+if (articles[id]) {
+
+setTimeout(
+function () {
+openArticle(id);
+},
+100
 );
 
 }
 
-
-function closeArticle() {
-
-  document.getElementById("articleOverlay")
-    .classList.remove("active");
-
-  document.body.style.overflow = "auto";
-
-  if (location.hash.startsWith("#story-")) {
-    history.pushState(
-      {},
-      "",
-      location.pathname + location.search
-    );
-  }
-
-}
-
-function closeArticle() {
-
-  document.getElementById("articleOverlay")
-    .classList.remove("active");
-
-  document.body.style.overflow = "auto";
-
-  if (location.hash.startsWith("#story-")) {
-    history.pushState(
-      {},
-      "",
-      location.pathname + location.search
-    );
-  }
-
-}
-
-window.addEventListener("popstate", function () {
-
-  if (
-    document.getElementById("articleOverlay")
-      .classList.contains("active")
-  ) {
-
-    document.getElementById("articleOverlay")
-      .classList.remove("active");
-
-    document.body.style.overflow = "auto";
-  }
-
-});
-
-if (location.hash.startsWith("#story-")) {
-
-  const id = location.hash.replace("#story-", "");
-
-  if (articles[id]) {
-
-    setTimeout(function () {
-      openArticle(id);
-    }, 100);
-
-  }
-
 }
 
 </script>
+
 
 <!-- Cloudflare Web Analytics -->
+
 <script
-  type="module"
-  src="https://static.cloudflareinsights.com/beacon.min.js"
-  data-cf-beacon='{"token":"e0a63b79e8264f1b863b1dd9b7192006"}'>
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"e0a63b79e8264f1b863b1dd9b7192006"}'>
 </script>
+
 <!-- End Cloudflare Web Analytics -->
 
 </body>
