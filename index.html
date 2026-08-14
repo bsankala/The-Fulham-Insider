@@ -1,1018 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The Fulham Insider | V8</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Fulham Insider</title>
 <style>
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
-    color: #111;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-}
-
-header {
-    background: #fff;
-    border-bottom: 4px solid #d00000;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header {
-    max-width: 1200px;
-    margin: auto;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 900;
-    white-space: nowrap;
-}
-
-.logo span {
-    color: #d00000;
-}
-
-nav {
-    display: flex;
-    gap: 18px;
-    overflow-x: auto;
-}
-
-nav a {
-    font-size: 11px;
-    font-weight: 900;
-    white-space: nowrap;
-}
-
-nav a:hover {
-    color: #d00000;
-}
-
-.breaking {
-    background: #111;
-    color: #fff;
-}
-
-.breaking-inner {
-    max-width: 1200px;
-    margin: auto;
-    min-height: 45px;
-    display: flex;
-    align-items: center;
-}
-
-.breaking-label {
-    background: #d00000;
-    padding: 13px 16px;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.breaking-text {
-    padding: 0 16px;
-    font-size: 12px;
-    font-weight: 700;
-    flex: 1;
-}
-
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 20px 70px;
-}
-
-.hero {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 50px 40px;
-    margin-bottom: 40px;
-}
-
-.tag {
-    display: inline-block;
-    background: #d00000;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: clamp(40px, 7vw, 68px);
-    line-height: .95;
-    letter-spacing: -3px;
-    margin-bottom: 18px;
-}
-
-.hero p {
-    max-width: 650px;
-    color: #666;
-    font-size: 15px;
-}
-
-.meta {
-    margin-top: 12px;
-    color: #999;
-    font-size: 10px;
-    font-weight: 800;
-}
-
-.section {
-    margin-bottom: 45px;
-}
-
-.section-title {
-    border-left: 5px solid #d00000;
-    padding-left: 12px;
-    margin-bottom: 20px;
-    font-size: 25px;
-    font-weight: 900;
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.card:hover {
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
-}
-
-.name-box {
-    height: 190px;
-    background: #e9e9e9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.card-content {
-    padding: 20px;
-}
-
-.category {
-    margin-bottom: 8px;
-    color: #d00000;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.card h3 {
-    font-size: 22px;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #666;
-    font-size: 13px;
-}
-
-.status {
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-size: 9px;
-    font-weight: 900;
-}
-
-.latest {
-    background: #d00000;
-    color: #fff;
-}
-
-.ongoing {
-    background: #ffe0c2;
-    color: #a34600;
-}
-
-.strong {
-    background: #ffd9d9;
-    color: #a00000;
-}
-
-.interest {
-    background: #fff0c9;
-    color: #8a5b00;
-}
-
-.confirmed {
-    background: #dcf5e4;
-    color: #147536;
-}
-
-.loan {
-    background: #fff0c9;
-    color: #8a5b00;
-}
-
-.left {
-    background: #eee;
-    color: #555;
-}
-
-.read-button {
-    margin-top: 16px;
-    padding: 10px 14px;
-    background: #111;
-    color: #fff;
-    border: 0;
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.read-button:hover {
-    background: #d00000;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 20px;
-}
-
-.rumour-grid {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-}
-
-.rumour-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-left: 5px solid #e47b00;
-    border-radius: 10px;
-    padding: 22px;
-}
-
-.rumour-card.strong-card {
-    border-left-color: #d00000;
-}
-
-.rumour-card h3 {
-    margin: 12px 0 8px;
-    font-size: 21px;
-}
-
-.rumour-card p {
-    color: #666;
-    font-size: 13px;
-}
-
-.source {
-    margin-top: 12px;
-    color: #888;
-    font-size: 10px;
-    font-weight: 800;
-}
-
-.latest-news {
-    border-left: 6px solid #d00000;
-}
-
-.latest-news .name-box {
-    background: #111;
-    color: #fff;
-}
-
-.transfer-guide {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 10px;
-}
-
-.guide {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px 10px;
-    text-align: center;
-}
-
-.guide strong {
-    display: block;
-    font-size: 10px;
-    margin-bottom: 5px;
-}
-
-.guide span {
-    color: #777;
-    font-size: 10px;
-}
-
-@media(max-width:900px) {
-
-    .news-grid,
-    .rumour-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .transfer-guide {
-        grid-template-columns: repeat(3,1fr);
-    }
-
-}
-
-@media(max-width:650px) {
-
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero {
-        padding: 35px 25px;
-    }
-
-    .transfer-guide {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-/* V8.1 TRANSFER BOARD FIX */
-
-.tracker {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.tracker-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 18px;
-    text-align: center;
-}
-
-.tracker-number {
-    font-size: 28px;
-    font-weight: 900;
-    color: #d00000;
-}
-
-.tracker-label {
-    margin-top: 5px;
-    font-size: 9px;
-    font-weight: 900;
-    color: #777;
-}
-
-.transfer-box {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.transfer-header,
-.transfer {
-    display: grid;
-    grid-template-columns: 1.5fr 1.2fr 1.2fr .8fr 1.2fr;
-    gap: 15px;
-    align-items: center;
-}
-
-.transfer-header {
-    background: #111;
-    color: #fff;
-    padding: 14px 18px;
-    font-size: 9px;
-    font-weight: 900;
-}
-
-.transfer {
-    padding: 18px;
-    border-top: 1px solid #eee;
-    font-size: 12px;
-}
-
-.transfer .player {
-    font-size: 14px;
-    font-weight: 900;
-    margin-bottom: 4px;
-}
-
-.transfer .club,
-.transfer .position {
-    color: #777;
-    font-size: 11px;
-    line-height: 1.4;
-}
-
-.transfer .status {
-    white-space: nowrap;
-}
-
-.outgoings {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.outgoing-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.outgoing-card h3 {
-    margin: 12px 0 5px;
-    font-size: 20px;
-}
-
-.outgoing-card p {
-    color: #777;
-    font-size: 12px;
-}
-
-.outgoing-destination {
-    margin-top: 15px;
-    font-size: 15px;
-    font-weight: 900;
-}
-
-.outgoing-note {
-    margin-top: 6px;
-    color: #999;
-    font-size: 10px;
-}
-
-.match-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
-
-.match-card,
-.next-match {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.match-main {
-    background: #111;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.match-label {
-    font-size: 9px;
-    font-weight: 900;
-    color: #aaa;
-    margin-bottom: 18px;
-}
-
-.teams {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 15px;
-    align-items: center;
-}
-
-.team {
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.score {
-    font-size: 34px;
-    font-weight: 900;
-}
-
-.match-sub {
-    margin-top: 12px;
-    font-size: 9px;
-    color: #aaa;
-    font-weight: 900;
-}
-
-.match-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: #ddd;
-}
-
-.info-box {
-    background: #fff;
-    padding: 15px 10px;
-    text-align: center;
-}
-
-.info-box strong {
-    display: block;
-    font-size: 8px;
-    color: #999;
-    margin-bottom: 5px;
-}
-
-.info-box span {
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.timeline {
-    padding: 20px;
-}
-
-.timeline-row {
-    display: flex;
-    gap: 15px;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.timeline-time {
-    width: 35px;
-    font-size: 10px;
-    font-weight: 900;
-    color: #d00000;
-}
-
-.timeline-event {
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.next-match {
-    background: #111;
-    color: #fff;
-    padding: 25px;
-}
-
-.next-match .match-info {
-    margin-top: 25px;
-}
-
-.next-match .info-box {
-    background: #222;
-    color: #fff;
-}
-
-.rankings {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-}
-
-.rank {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px 12px;
-    text-align: center;
-}
-
-.rank-number {
-    font-size: 32px;
-    font-weight: 900;
-    color: #d00000;
-}
-
-.rank-player {
-    margin-top: 8px;
-    font-weight: 900;
-    font-size: 15px;
-}
-
-.rank-note {
-    margin-top: 5px;
-    color: #888;
-    font-size: 10px;
-}
-
-.insider-note {
-    background: #111;
-    color: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    font-size: 12px;
-}
-
-.article-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: #f4f4f4;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    display: none;
-}
-
-.article-overlay.active {
-    display: block;
-}
-
-.article-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: #fff;
-    border-bottom: 4px solid #d00000;
-}
-
-.article-header-inner {
-    max-width: 1000px;
-    margin: auto;
-    padding: 16px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.article-logo {
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.article-logo span {
-    color: #d00000;
-}
-
-.close-button {
-    border: 0;
-    background: #111;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.close-button:hover {
-    background: #d00000;
-}
-
-.article {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 55px 25px 80px;
-}
-
-.article h1 {
-    font-size: clamp(36px, 6vw, 62px);
-    line-height: 1;
-    letter-spacing: -2px;
-    margin-bottom: 20px;
-}
-
-.article-intro {
-    color: #666;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.article-body {
-    margin-top: 35px;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.article-body h2 {
-    margin: 35px 0 12px;
-    font-size: 25px;
-}
-
-.article-body p {
-    margin-bottom: 18px;
-}
-
-.sources {
-    margin-top: 40px;
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.sources h3 {
-    font-size: 12px;
-    margin-bottom: 12px;
-}
-
-.sources a {
-    display: block;
-    color: #d00000;
-    font-size: 12px;
-    font-weight: 800;
-    margin-top: 8px;
-}
-
-.back-button {
-    display: inline-block;
-    margin-top: 35px;
-    background: #111;
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.back-button:hover {
-    background: #d00000;
-}
-
-footer {
-    background: #111;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-logo {
-    font-size: 20px;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-
-.footer-logo span {
-    color: #d00000;
-}
-
-footer p {
-    color: #999;
-    font-size: 10px;
-    margin-top: 7px;
-}
-
-@media(max-width:900px) {
-
-    .transfer-header {
-        display: none;
-    }
-
-    .transfer {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-
-    .transfer > div:nth-child(5) {
-        grid-column: 1 / -1;
-    }
-
-    .outgoings {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .match-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .rankings {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .tracker {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .transfer {
-        grid-template-columns: 1fr;
-    }
-
-    .transfer > div:nth-child(5) {
-        grid-column: auto;
-    }
-
-    .outgoings {
-        grid-template-columns: 1fr;
-    }
-
-    .rankings {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .article {
-        padding: 40px 20px 60px;
-    }
-
-}
-/* V9 ACCOUNT SYSTEM */
-
-.account-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.account-button {
-    border: 0;
-    border-radius: 5px;
-    padding: 10px 13px;
-    font-size: 9px;
-    font-weight: 900;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.create-button {
-    background: #d00000;
-    color: #fff;
-}
-
-.create-button:hover {
-    background: #a00000;
-}
-
-.login-button {
-    background: #111;
-    color: #fff;
-}
-
-.login-button:hover {
-    background: #333;
-}
-
-.auth-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 100000;
-    background: rgba(0,0,0,.65);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.auth-overlay.active {
-    display: flex;
-}
-
-.auth-box {
-    width: 100%;
-    max-width: 430px;
-    background: #fff;
-    border-radius: 12px;
-    padding: 35px;
-    position: relative;
-}
-
-.auth-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    border: 0;
-    background: transparent;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.auth-box h2 {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.auth-subtitle {
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.auth-field {
-    margin-bottom: 15px;
-}
-
-.auth-field label {
-    display: block;
-    font-size: 10px;
-    font-weight: 900;
-    margin-bottom: 6px;
-}
-
-.auth-field input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 13px;
-}
-
-.auth-submit {
-    width: 100%;
-    margin-top: 5px;
-    padding: 13px;
-    border: 0;
-    border-radius: 5px;
-    background: #d00000;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-.auth-submit:hover {
-    background: #a00000;
-}
-
-.auth-switch {
-    text-align: center;
-    margin-top: 18px;
-    color: #777;
-    font-size: 11px;
-}
-
-.auth-switch button {
-    border: 0;
-    background: transparent;
-    color: #d00000;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-@media(max-width:900px) {
-
-    .header {
-        flex-wrap: wrap;
-    }
-
-    .account-actions {
-        width: 100%;
-    }
-
-    .account-button {
-        flex: 1;
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .account-actions {
-        width: 100%;
-    }
-
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f4f4;color:#111}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+header{background:#fff;border-bottom:4px solid #d00000;position:sticky;top:0;z-index:1000}
+.header{max-width:1200px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+.logo{font-size:24px;font-weight:900;white-space:nowrap}
+.logo span,.red{color:#d00000}
+nav{display:flex;gap:15px;overflow-x:auto;flex:1}
+nav a{font-size:10px;font-weight:900;white-space:nowrap}
+.account-actions{display:flex;gap:7px}
+.account-button{border:0;border-radius:5px;padding:10px 12px;font-size:9px;font-weight:900;color:#fff}
+.create{background:#d00000}.login{background:#111}
+.breaking{background:#111;color:#fff}
+.breaking-inner{max-width:1200px;margin:auto;display:flex;align-items:center;min-height:44px}
+.breaking-label{background:#d00000;padding:13px 15px;font-size:10px;font-weight:900}
+.breaking-text{padding:0 15px;font-size:12px;font-weight:700}
+main{max-width:1200px;margin:auto;padding:30px 20px 60px}
+.hero{background:#fff;border:1px solid #ddd;border-radius:12px;padding:45px 35px;margin-bottom:35px}
+.tag{display:inline-block;background:#d00000;color:#fff;padding:6px 9px;border-radius:4px;font-size:9px;font-weight:900;margin-bottom:14px}
+.hero h1{font-size:clamp(42px,7vw,70px);line-height:.95;letter-spacing:-3px;margin-bottom:16px}
+.hero p{color:#666;font-size:14px}
+.meta{margin-top:10px;color:#999;font-size:9px;font-weight:900}
+.section{margin-bottom:40px}
+.section-title{border-left:5px solid #d00000;padding-left:11px;margin-bottom:18px;font-size:25px;font-weight:900}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;overflow:hidden}
+.card-img{height:170px;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;text-align:center}
+.card-content{padding:20px}
+.category{margin-bottom:9px;font-size:9px;font-weight:900}
+.card h3{font-size:21px;margin-bottom:9px}
+.card p{font-size:13px;color:#666;line-height:1.5}
+.status{display:inline-block;padding:6px 9px;border-radius:20px;font-size:8px;font-weight:900}
+.latest{background:#d00000;color:#fff}
+.strong{background:#ffd9d9;color:#a00000}
+.personal{background:#e5ddff;color:#5135a4}
+.interest{background:#fff0c9;color:#8a5b00}
+.confirmed{background:#dcf5e4;color:#147536}
+.loan{background:#fff0c9;color:#8a5b00}
+.left{background:#eee;color:#555}
+.read{margin-top:14px;padding:10px 13px;background:#111;color:#fff;border:0;border-radius:5px;font-size:9px;font-weight:900}
+.grid3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rumour{background:#fff;border:1px solid #ddd;border-left:5px solid #d00000;border-radius:9px;padding:20px}
+.rumour h3{margin:12px 0 8px;font-size:20px}
+.rumour p{font-size:13px;color:#666;line-height:1.5}
+.source{margin-top:12px;color:#888;font-size:9px;font-weight:900}
 </style>
-
 </head>
-
 <body>
 
 <header>
-
 <div class="header">
-
-<a href="#home" class="logo">
-THE FULHAM <span>INSIDER</span>
-</a>
-
+<a href="#home" class="logo">THE FULHAM <span>INSIDER</span></a>
 <nav>
 <a href="#home">HOME</a>
 <a href="#news">NEWS</a>
@@ -1021,35 +66,464 @@ THE FULHAM <span>INSIDER</span>
 <a href="#rumours">RUMOURS</a>
 <a href="#outgoings">OUTGOINGS</a>
 </nav>
+<div class="account-actions">
+<button class="account-button create" onclick="openAuth('register')">CREATE ACCOUNT</button>
+<button class="account-button login" onclick="openAuth('login')">LOG IN</button>
+</div>
+</div>
+</header>
+
+<div class="breaking">
+<div class="breaking-inner">
+<div class="breaking-label">🚨 BREAKING</div>
+<div class="breaking-text">Fulham remain interested in Aaron Wan-Bissaka despite Aston Villa agreeing personal terms.</div>
+</div>
+</div>
+
+<main id="home">
+
+<section class="hero">
+<span class="tag">V9 • THE FULHAM INSIDER</span>
+<h1>THE FULHAM INSIDER</h1>
+<p>Fulham news, transfers, rumours, match coverage and The Insider's view.</p>
+<div class="meta">UPDATED AUGUST 2026</div>
+</section>
+
+<section class="section" id="news">
+<h2 class="section-title">📰 Latest News</h2>
+<div class="card">
+<div class="card-img">MADDOX ZAIDAN-JONES</div>
+<div class="card-content">
+<div class="category"><span class="status latest">LATEST NEWS</span></div>
+<h3>Maddox Zaidan-Jones joins Fulham's U21s</h3>
+<p>Fulham have added talented youngster Maddox Zaidan-Jones to their Under-21 group.</p>
+<button class="read" onclick="openArticle('maddox')">READ FULL STORY →</button>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">🔥 Transfer Headlines</h2>
+<div class="grid3">
+
+<div class="card">
+<div class="card-img">WAN-BISSAKA</div>
+<div class="card-content">
+<div class="category"><span class="status personal">PERSONAL TERMS AGREED</span></div>
+<h3>Villa lead the race for Wan-Bissaka</h3>
+<p>Aston Villa have agreed personal terms in principle, while Fulham remain interested.</p>
+<button class="read" onclick="openArticle('wan')">READ FULL STORY →</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-img">HÉCTOR FORT</div>
+<div class="card-content">
+<div class="category"><span class="status strong">STRONG INTEREST</span></div>
+<h3>Fulham show strong interest in Héctor Fort</h3>
+<p>Fulham are monitoring the young Barcelona full-back.</p>
+<button class="read" onclick="openArticle('fort')">READ FULL STORY →</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-img">MÁLAGA 2–2</div>
+<div class="card-content">
+<div class="category"><span class="status confirmed">MATCH REPORT</span></div>
+<h3>Fulham draw 2–2 with Málaga</h3>
+<p>Castagne produced two assists in the friendly.</p>
+<button class="read" onclick="openArticle('malaga')">READ FULL STORY →</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="rumours">
+<h2 class="section-title">👀 Rumour Watch</h2>
+<div class="grid2">
+
+<div class="rumour">
+<span class="status personal">PERSONAL TERMS AGREED</span>
+<h3>Aaron Wan-Bissaka</h3>
+<p>Aston Villa have agreed personal terms in principle. Fulham remain interested, but Villa currently appear ahead.</p>
+<div class="source">TRANSFER UPDATE</div>
+<button class="read" onclick="openArticle('wan')">READ FULL STORY →</button>
+</div>
+
+<div class="rumour">
+<span class="status strong">STRONG INTEREST</span>
+<h3>Héctor Fort</h3>
+<p>Fulham are showing strong interest in the Barcelona youngster.</p>
+<div class="source">TRANSFER REPORTING</div>
+<button class="read" onclick="openArticle('fort')">READ FULL STORY →</button>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="outgoings">
+<h2 class="section-title">🔴 Outgoings</h2>
+<div class="grid2">
+
+<div class="rumour">
+<span class="status left">LEFT</span>
+<h3>Saša Lukić</h3>
+<p>Midfielder</p>
+<strong>Ipswich Town</strong>
+<div class="source">PERMANENT TRANSFER</div>
+</div>
+
+<div class="rumour">
+<span class="status left">LEFT</span>
+<h3>Issa Diop</h3>
+<p>Centre-back</p>
+<strong>Ipswich Town</strong>
+<div class="source">PERMANENT TRANSFER</div>
+</div>
+
+<div class="rumour">
+<span class="status left">LEFT</span>
+<h3>Harry Wilson</h3>
+<p>Winger</p>
+<strong>Leeds United</strong>
+<div class="source">PERMANENT TRANSFER</div>
+</div>
+
+<div class="rumour">
+<span class="status left">LEFT</span>
+<h3>Raúl Jiménez</h3>
+<p>Striker</p>
+<strong>Wolverhampton Wanderers</strong>
+<div class="source">PERMANENT TRANSFER</div>
+</div>
+
+<div class="rumour">
+<span class="status left">LEFT</span>
+<h3>Jon Esenga</h3>
+<p>Defender</p>
+<strong>IF Elfsborg</strong>
+<div class="source">PERMANENT TRANSFER</div>
+</div>
+
+<div class="rumour">
+<span class="status left">FREE AGENT</span>
+<h3>Steven Benda</h3>
+<p>Goalkeeper</p>
+<strong>Free Agent</strong>
+<div class="source">LEFT FULHAM</div>
+</div>
+
+<div class="rumour">
+<span class="status loan">LOAN</span>
+<h3>Alfie McNally</h3>
+<p>Goalkeeper</p>
+<strong>York City</strong>
+<div class="source">SEASON-LONG LOAN</div>
+</div>
+
+</div>
+</section>
+
+
+<section class="section" id="transfers">
+<h2 class="section-title">🔄 Transfer Board</h2>
+
+<div class="grid2">
+
+<div class="rumour">
+<span class="status personal">PERSONAL TERMS</span>
+<h3>Aaron Wan-Bissaka</h3>
+<p><strong>West Ham → Aston Villa</strong></p>
+<p>Fulham remain interested in the right-back.</p>
+</div>
+
+<div class="rumour">
+<span class="status strong">STRONG INTEREST</span>
+<h3>Héctor Fort</h3>
+<p><strong>Barcelona → Fulham</strong></p>
+<p>Fulham are monitoring the young full-back.</p>
+</div>
+
+<div class="rumour">
+<span class="status confirmed">CONFIRMED</span>
+<h3>Shea Charles</h3>
+<p><strong>Southampton → Fulham</strong></p>
+<p>Midfield addition for Fulham.</p>
+</div>
+
+<div class="rumour">
+<span class="status confirmed">CONFIRMED</span>
+<h3>Gonzalo García</h3>
+<p><strong>Real Madrid → Fulham</strong></p>
+<p>Forward added to the squad.</p>
+</div>
+
+</div>
+</section>
+
+
+<section class="section" id="matches">
+<h2 class="section-title">🏟️ Match Centre</h2>
+
+<div class="grid2">
+
+<div class="card">
+<div class="card-content" style="text-align:center">
+
+<div class="category">PRE-SEASON FRIENDLY • FULL TIME</div>
+
+<h3 style="font-size:32px">
+MÁLAGA 2–2 FULHAM
+</h3>
+
+<p>Fulham were held to a 2–2 draw.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px">
+
+<div style="background:#f1f1f1;padding:15px">
+<strong>POSSESSION</strong>
+<br>
+Málaga — / Fulham —
+</div>
+
+<div style="background:#f1f1f1;padding:15px">
+<strong>SHOTS</strong>
+<br>
+Málaga — / Fulham —
+</div>
+
+<div style="background:#f1f1f1;padding:15px">
+<strong>SHOTS ON TARGET</strong>
+<br>
+Málaga — / Fulham —
+</div>
+
+<div style="background:#f1f1f1;padding:15px">
+<strong>CARDS</strong>
+<br>
+Málaga — / Fulham —
+</div>
 
 </div>
 
-<header>
+<button class="read" onclick="openArticle('malaga')">
+FULL MATCH STORY →
+</button>
 
-<div class="header">
+</div>
+</div>
 
-<a href="#home" class="logo">
-THE FULHAM <span>INSIDER</span>
-</a>
 
-<nav>
-<a href="#home">HOME</a>
-<a href="#news">NEWS</a>
-<a href="#matches">MATCH CENTRE</a>
-<a href="#transfers">TRANSFERS</a>
-<a href="#rumours">RUMOURS</a>
-<a href="#outgoings">OUTGOINGS</a>
-</nav>
+<div class="rumour">
 
-<div class="account-actions">
+<div class="category">
+NEXT MATCH
+</div>
 
-<button class="account-button create-button"
-onclick="openAuth('register')">
+<h3>Stuttgart vs Fulham</h3>
+
+<p>Pre-season friendly.</p>
+
+<div style="margin-top:25px;padding:20px;background:#111;color:#fff;text-align:center;border-radius:6px">
+
+<strong style="font-size:20px">
+STUTTGART
+</strong>
+
+<div style="margin:10px;color:#aaa">
+VS
+</div>
+
+<strong style="font-size:20px">
+FULHAM
+</strong>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section">
+<h2 class="section-title">⭐ The Insider's Rankings</h2>
+
+<div class="grid3">
+
+<div class="rumour">
+<div style="font-size:35px;font-weight:900;color:#d00000">1</div>
+<h3>Castagne</h3>
+<p>Two assists and a standout performance.</p>
+</div>
+
+<div class="rumour">
+<div style="font-size:35px;font-weight:900;color:#d00000">2</div>
+<h3>Sessegnon</h3>
+</div>
+
+<div class="rumour">
+<div style="font-size:35px;font-weight:900;color:#d00000">3</div>
+<h3>Iwobi</h3>
+</div>
+
+<div class="rumour">
+<div style="font-size:35px;font-weight:900;color:#d00000">4</div>
+<h3>Palacios</h3>
+</div>
+
+<div class="rumour">
+<div style="font-size:35px;font-weight:900;color:#d00000">5</div>
+<h3>Robinson</h3>
+</div>
+
+</div>
+</section>
+<!-- FULL STORY WINDOW -->
+
+<div class="article-overlay" id="articleOverlay">
+
+<div class="article-top">
+<div class="article-brand">THE FULHAM <span>INSIDER</span></div>
+<button class="close-story" onclick="closeArticle()">✕ CLOSE STORY</button>
+</div>
+
+<article class="article">
+
+<div class="tag" id="articleTag"></div>
+
+<h1 id="articleTitle"></h1>
+
+<p class="article-intro" id="articleIntro"></p>
+
+<div class="meta" id="articleMeta"></div>
+
+<div class="article-body" id="articleBody"></div>
+
+<div class="story-actions">
+
+<button onclick="openAuth('comment')">
+💬 WRITE A COMMENT
+</button>
+
+<button onclick="openAuth('complaint')">
+⚠ WRITE A COMPLAINT
+</button>
+
+</div>
+
+<button class="close-bottom" onclick="closeArticle()">
+← CLOSE STORY
+</button>
+
+</article>
+</div>
+
+
+<!-- ACCOUNT WINDOW -->
+
+<div class="auth-overlay" id="authOverlay">
+
+<div class="auth-box">
+
+<button class="auth-close" onclick="closeAuth()">✕</button>
+
+
+<!-- LOGIN -->
+
+<div id="loginForm">
+
+<h2>Welcome back</h2>
+
+<p class="auth-subtitle">
+Log in to your Fulham Insider account.
+</p>
+
+<label>EMAIL OR USERNAME</label>
+
+<input
+id="loginIdentity"
+type="text"
+placeholder="Email or username"
+>
+
+<label>PASSWORD</label>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password"
+>
+
+<button class="auth-submit" onclick="demoLogin()">
+LOG IN
+</button>
+
+<div class="auth-switch">
+
+Don't have an account?
+
+<button onclick="showRegister()">
 CREATE ACCOUNT
 </button>
 
-<button class="account-button login-button"
-onclick="openAuth('login')">
+</div>
+
+</div>
+
+
+<!-- REGISTER -->
+
+<div id="registerForm" style="display:none">
+
+<h2>Create account</h2>
+
+<p class="auth-subtitle">
+Join The Fulham Insider community.
+</p>
+
+<label>USERNAME</label>
+
+<input
+id="registerUsername"
+type="text"
+placeholder="Choose a username"
+>
+
+<label>EMAIL</label>
+
+<input
+id="registerEmail"
+type="email"
+placeholder="Email address"
+>
+
+<label>PASSWORD</label>
+
+<input
+id="registerPassword"
+type="password"
+placeholder="Create password"
+>
+
+<label>CONFIRM PASSWORD</label>
+
+<input
+id="registerConfirm"
+type="password"
+placeholder="Confirm password"
+>
+
+<button class="auth-submit" onclick="demoRegister()">
+CREATE ACCOUNT
+</button>
+
+<div class="auth-switch">
+
+Already have an account?
+
+<button onclick="showLogin()">
 LOG IN
 </button>
 
@@ -1057,174 +531,54 @@ LOG IN
 
 </div>
 
-</header>
 
-<div class="breaking">
+<!-- COMMENT -->
 
-<div class="breaking-inner">
+<div id="commentForm" style="display:none">
 
-<div class="breaking-label">
-🚨 BREAKING
-</div>
+<h2>Have your say</h2>
 
-<div class="breaking-text">
-Fulham have made an offer for Aaron Wan-Bissaka on an initial loan.
-</div>
-
-</div>
-
-</div>
-
-<main id="home">
-
-<section class="hero">
-
-<span class="tag">
-V8 • THE FULHAM INSIDER
-</span>
-
-<h1>
-THE FULHAM INSIDER
-</h1>
-
-<p>
-Fulham news, transfers, rumours, match coverage and The Insider's view.
+<p class="auth-subtitle">
+You need a Fulham Insider account to comment on this story.
 </p>
 
-<div class="meta">
-UPDATED 13 AUGUST 2026
-</div>
+<button class="auth-submit" onclick="showLogin()">
+LOG IN TO COMMENT
+</button>
 
-</section>
+<div class="auth-switch">
 
-<section class="section" id="news">
+Don't have an account?
 
-<h2 class="section-title">
-📰 Latest News
-</h2>
-
-<div class="card latest-news">
-
-<div class="name-box">
-MADDOX ZAIDAN-JONES
-</div>
-
-<div class="card-content">
-
-<div class="category">
-<span class="status latest">LATEST NEWS</span>
-</div>
-
-<h3>
-Maddox Zaidan-Jones joins Fulham's U21s
-</h3>
-
-<p>
-Fulham have added talented youngster Maddox Zaidan-Jones to their Under-21 group as he continues his development within the club's pathway.
-</p>
-
-<button class="read-button" onclick="openArticle('maddox')">
-READ FULL STORY →
+<button onclick="showRegister()">
+CREATE ACCOUNT
 </button>
 
 </div>
 
 </div>
 
-</section>
 
-<section class="section">
+<!-- COMPLAINT -->
 
-<h2 class="section-title">
-🔥 Transfer Headlines
-</h2>
+<div id="complaintForm" style="display:none">
 
-<div class="news-grid">
+<h2>Write a complaint</h2>
 
-<div class="card">
-
-<div class="name-box">
-WAN-BISSAKA
-</div>
-
-<div class="card-content">
-
-<div class="category">
-<span class="status ongoing">
-ONGOING TALKS
-</span>
-</div>
-
-<h3>
-Fulham make loan offer for Aaron Wan-Bissaka
-</h3>
-
-<p>
-Fulham have made an offer for the West Ham right-back, with the deal reportedly structured as an initial loan.
+<p class="auth-subtitle">
+You need an account before submitting a complaint.
 </p>
 
-<button class="read-button" onclick="openArticle('wan')">
-READ FULL STORY →
+<button class="auth-submit" onclick="showLogin()">
+LOG IN
 </button>
 
-</div>
+<div class="auth-switch">
 
-</div>
+Don't have an account?
 
-<div class="card">
-
-<div class="name-box">
-HÉCTOR FORT
-</div>
-
-<div class="card-content">
-
-<div class="category">
-<span class="status strong">
-STRONG INTEREST
-</span>
-</div>
-
-<h3>
-Fulham show strong interest in Héctor Fort
-</h3>
-
-<p>
-Fulham have been linked with Barcelona's young full-back.
-</p>
-
-<button class="read-button" onclick="openArticle('fort')">
-READ FULL STORY →
-</button>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="name-box">
-MÁLAGA 2–2
-</div>
-
-<div class="card-content">
-
-<div class="category">
-<span class="status confirmed">
-MATCH REPORT
-</span>
-</div>
-
-<h3>
-Fulham draw 2–2 with Málaga
-</h3>
-
-<p>
-Castagne produced two assists as Fulham drew their friendly against Málaga.
-</p>
-
-<button class="read-button" onclick="openArticle('malaga')">
-READ FULL STORY →
+<button onclick="showRegister()">
+CREATE ACCOUNT
 </button>
 
 </div>
@@ -1232,1383 +586,530 @@ READ FULL STORY →
 </div>
 
 </div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-📋 Transfer Status Guide
-</h2>
-
-<div class="transfer-guide">
-
-<div class="guide">
-<strong style="color:#147536;">
-🟢 CONFIRMED
-</strong>
-<span>
-Officially completed
-</span>
-</div>
-
-<div class="guide">
-<strong style="color:#a00000;">
-🔴 STRONG INTEREST
-</strong>
-<span>
-Serious pursuit
-</span>
-</div>
-
-<div class="guide">
-<strong style="color:#a34600;">
-🟠 ONGOING TALKS
-</strong>
-<span>
-Active talks or offer
-</span>
-</div>
-
-<div class="guide">
-<strong style="color:#8a5b00;">
-🟡 INTEREST
-</strong>
-<span>
-Interest reported
-</span>
-</div>
-
-<div class="guide">
-<strong>
-⚪ LINKED
-</strong>
-<span>
-Early reporting
-</span>
-</div>
-
-</div>
-
-</section>
-<section class="section" id="rumours">
-
-<h2 class="section-title">
-👀 Rumour Watch
-</h2>
-
-<div class="rumour-grid">
-
-<div class="rumour-card">
-
-<span class="status ongoing">
-ONGOING TALKS
-</span>
-
-<h3>
-Aaron Wan-Bissaka
-</h3>
-
-<p>
-Fulham have made an offer for the West Ham right-back on an initial loan. Reports have also suggested that a loan-to-buy structure could be explored.
-</p>
-
-<div class="source">
-SOURCE: TRANSFERFEED / DAILY MAIL REPORTING
-</div>
-
-<button class="read-button" onclick="openArticle('wan')">
-READ FULL STORY →
-</button>
-
-</div>
-
-
-<div class="rumour-card strong-card">
-
-<span class="status strong">
-STRONG INTEREST
-</span>
-
-<h3>
-Héctor Fort
-</h3>
-
-<p>
-Fulham are monitoring Barcelona defender Héctor Fort. Recent reporting has placed Fulham among the clubs interested in the young full-back.
-</p>
-
-<div class="source">
-SOURCE: TRANSFERFEED / GUARDIAN REPORTING
-</div>
-
-<button class="read-button" onclick="openArticle('fort')">
-READ FULL STORY →
-</button>
-
-</div>
-
-
-<div class="rumour-card">
-
-<span class="status interest">
-INTEREST
-</span>
-
-<h3>
-Manuel Ángel
-</h3>
-
-<p>
-Fulham have previously been linked with the young Spanish midfielder as the club continues to explore options for the squad.
-</p>
-
-<div class="source">
-STATUS: INTEREST
-</div>
-
-</div>
-
-
-<div class="rumour-card">
-
-<span class="status interest">
-INTEREST
-</span>
-
-<h3>
-Thiago Pitarch
-</h3>
-
-<p>
-Fulham were previously linked with the Spanish midfielder, although the latest reporting indicates that the proposed move will not proceed.
-</p>
-
-<div class="source">
-STATUS: INTEREST — MOVE NOT PROCEEDING
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="outgoings">
-
-<h2 class="section-title">
-🔴 Outgoings
-</h2>
-
-<p style="color:#666;font-size:13px;margin-bottom:20px;">
-Players who have left Fulham, including permanent departures, free agents and players sent out on loan.
-</p>
-
-<div class="outgoings">
-
-
-<div class="outgoing-card permanent">
-
-<span class="status left">
-LEFT
-</span>
-
-<h3>
-Saša Lukić
-</h3>
-
-<p>
-Midfielder
-</p>
-
-<div class="outgoing-destination">
-→ Ipswich Town
-</div>
-
-<div class="outgoing-note">
-Permanent transfer
-</div>
-
-</div>
-
-
-<div class="outgoing-card permanent">
-
-<span class="status left">
-LEFT
-</span>
-
-<h3>
-Issa Diop
-</h3>
-
-<p>
-Centre-back
-</p>
-
-<div class="outgoing-destination">
-→ Ipswich Town
-</div>
-
-<div class="outgoing-note">
-Permanent transfer
-</div>
-
-</div>
-
-
-<div class="outgoing-card permanent">
-
-<span class="status left">
-LEFT
-</span>
-
-<h3>
-Harry Wilson
-</h3>
-
-<p>
-Winger
-</p>
-
-<div class="outgoing-destination">
-→ Leeds United
-</div>
-
-<div class="outgoing-note">
-Permanent transfer
-</div>
-
-</div>
-
-
-<div class="outgoing-card permanent">
-
-<span class="status left">
-LEFT
-</span>
-
-<h3>
-Raúl Jiménez
-</h3>
-
-<p>
-Striker
-</p>
-
-<div class="outgoing-destination">
-→ Wolverhampton Wanderers
-</div>
-
-<div class="outgoing-note">
-Permanent transfer
-</div>
-
-</div>
-
-
-<div class="outgoing-card permanent">
-
-<span class="status left">
-LEFT
-</span>
-
-<h3>
-Jon Esenga
-</h3>
-
-<p>
-Defender
-</p>
-
-<div class="outgoing-destination">
-→ IF Elfsborg
-</div>
-
-<div class="outgoing-note">
-Permanent departure
-</div>
-
-</div>
-
-
-<div class="outgoing-card free-agent">
-
-<span class="status left">
-FREE AGENT
-</span>
-
-<h3>
-Steven Benda
-</h3>
-
-<p>
-Goalkeeper
-</p>
-
-<div class="outgoing-destination">
-→ Free Agent
-</div>
-
-<div class="outgoing-note">
-No new club listed
-</div>
-
-</div>
-
-
-<div class="outgoing-card loan-card">
-
-<span class="status loan">
-LOAN
-</span>
-
-<h3>
-Alfie McNally
-</h3>
-
-<p>
-Goalkeeper
-</p>
-
-<div class="outgoing-destination">
-→ York City
-</div>
-
-<div class="outgoing-note">
-Season-long loan • 2026/27
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="transfers">
-
-<h2 class="section-title">
-🔄 Transfer Board
-</h2>
-
-<div class="tracker">
-
-<div class="tracker-card">
-<div class="tracker-number">3</div>
-<div class="tracker-label">
-CONFIRMED ARRIVALS
-</div>
-</div>
-
-<div class="tracker-card">
-<div class="tracker-number">2</div>
-<div class="tracker-label">
-ACTIVE TARGETS
-</div>
-</div>
-
-<div class="tracker-card">
-<div class="tracker-number">7</div>
-<div class="tracker-label">
-OUTGOINGS
-</div>
-</div>
-
-<div class="tracker-card">
-<div class="tracker-number">26/27</div>
-<div class="tracker-label">
-SEASON
-</div>
-</div>
-
-</div>
-
-
-<div class="transfer-box">
-
-<div class="transfer-header">
-<div>PLAYER</div>
-<div>FROM</div>
-<div>TO</div>
-<div>TYPE</div>
-<div>STATUS</div>
-</div>
-
-
-<div class="transfer">
-
-<div>
-<div class="player">
-Aaron Wan-Bissaka
-</div>
-<div class="club">
-Right-back
-</div>
-</div>
-
-<div class="club">
-West Ham United
-</div>
-
-<div class="club">
-Fulham
-</div>
-
-<div class="position">
-Loan
-</div>
-
-<div>
-<span class="status ongoing">
-ONGOING TALKS
-</span>
-</div>
-
-</div>
-
-
-<div class="transfer">
-
-<div>
-<div class="player">
-Héctor Fort
-</div>
-<div class="club">
-Right-back
-</div>
-</div>
-
-<div class="club">
-Barcelona
-</div>
-
-<div class="club">
-Fulham
-</div>
-
-<div class="position">
-Permanent TBC
-</div>
-
-<div>
-<span class="status strong">
-STRONG INTEREST
-</span>
-</div>
-
-</div>
-
-
-<div class="transfer">
-
-<div>
-<div class="player">
-Shea Charles
-</div>
-<div class="club">
-Midfielder
-</div>
-</div>
-
-<div class="club">
-Southampton
-</div>
-
-<div class="club">
-Fulham
-</div>
-
-<div class="position">
-Permanent
-</div>
-
-<div>
-<span class="status confirmed">
-CONFIRMED
-</span>
-</div>
-
-</div>
-
-
-<div class="transfer">
-
-<div>
-<div class="player">
-Gonzalo García
-</div>
-<div class="club">
-Forward
-</div>
-</div>
-
-<div class="club">
-Real Madrid
-</div>
-
-<div class="club">
-Fulham
-</div>
-
-<div class="position">
-Permanent
-</div>
-
-<div>
-<span class="status confirmed">
-CONFIRMED
-</span>
-</div>
-
-</div>
-
-
-<div class="transfer">
-
-<div>
-<div class="player">
-César Palacios
-</div>
-<div class="club">
-Midfielder
-</div>
-</div>
-
-<div class="club">
-Real Madrid
-</div>
-
-<div class="club">
-Fulham
-</div>
-
-<div class="position">
-Permanent
-</div>
-
-<div>
-<span class="status confirmed">
-CONFIRMED
-</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="matches">
-
-<h2 class="section-title">
-🏟️ Match Centre
-</h2>
-
-<div class="match-grid">
-
-
-<div class="match-card">
-
-<div class="match-main">
-
-<div class="match-label">
-PRE-SEASON FRIENDLY
-</div>
-
-<div class="teams">
-
-<div class="team">
-MÁLAGA
-</div>
-
-<div class="score">
-2–2
-</div>
-
-<div class="team">
-FULHAM
-</div>
-
-</div>
-
-<div class="match-sub">
-FULL TIME
-</div>
-
-</div>
-
-
-<div class="match-info">
-
-<div class="info-box">
-<strong>POSSESSION</strong>
-<span>
-Málaga — / Fulham —
-</span>
-</div>
-
-<div class="info-box">
-<strong>SHOTS</strong>
-<span>
-Málaga — / Fulham —
-</span>
-</div>
-
-<div class="info-box">
-<strong>SHOTS ON TARGET</strong>
-<span>
-Málaga — / Fulham —
-</span>
-</div>
-
-</div>
-
-
-<div class="timeline">
-
-<div class="timeline-row">
-<div class="timeline-time">
-FT
-</div>
-
-<div class="timeline-event">
-Fulham finish the friendly with a 2–2 draw.
-</div>
-</div>
-
-<div class="timeline-time">
-⭐
-</div>
-
-<div class="timeline-event">
-Castagne produces two assists.
-</div>
-</div>
-document.body.style.overflow = "hidden";
-document.getElementById("articleOverlay").scrollTop = 0;
-
-<div class="timeline-row">
-<div class="timeline-time">
-👑
-</div>
-
-<div class="timeline-event">
-The Insider's Rankings: Castagne, Sessegnon, Iwobi, Palacios, Robinson.
-</div>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="next-match">
-
-<div class="match-label">
-NEXT MATCH
-</div>
-/* V9 ACCOUNT SYSTEM */
-
-.account-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.account-button {
-    border: 0;
-    border-radius: 5px;
-    padding: 10px 13px;
-    font-size: 9px;
-    font-weight: 900;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.create-button {
-    background: #d00000;
-    color: #fff;
-}
-
-.create-button:hover {
-    background: #a00000;
-}
-
-.login-button {
-    background: #111;
-    color: #fff;
-}
-
-.login-button:hover {
-    background: #333;
-}
-
-.auth-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 100000;
-    background: rgba(0,0,0,.65);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.auth-overlay.active {
-    display: flex;
-}
-
-.auth-box {
-    width: 100%;
-    max-width: 430px;
-    background: #fff;
-    border-radius: 12px;
-    padding: 35px;
-    position: relative;
-}
-
-.auth-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    border: 0;
-    background: transparent;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.auth-box h2 {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.auth-subtitle {
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.auth-field {
-    margin-bottom: 15px;
-}
-
-.auth-field label {
-    display: block;
-    font-size: 10px;
-    font-weight: 900;
-    margin-bottom: 6px;
-}
-
-.auth-field input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 13px;
-}
-
-.auth-submit {
-    width: 100%;
-    margin-top: 5px;
-    padding: 13px;
-    border: 0;
-    border-radius: 5px;
-    background: #d00000;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-.auth-submit:hover {
-    background: #a00000;
-}
-
-.auth-switch {
-    text-align: center;
-    margin-top: 18px;
-    color: #777;
-    font-size: 11px;
-}
-
-.auth-switch button {
-    border: 0;
-    background: transparent;
-    color: #d00000;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-@media(max-width:900px) {
-
-    .header {
-        flex-wrap: wrap;
-    }
-
-    .account-actions {
-        width: 100%;
-    }
-
-    .account-button {
-        flex: 1;
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .account-actions {
-        width: 100%;
-    }
-
-}
-<h3 style="font-size:30px;margin-bottom:12px;">
-STUTTGART
-</h3>
-
-<p style="color:#aaa;font-size:13px;">
-Fulham's next pre-season friendly.
-</p>
-
-<div class="match-info">
-
-<div class="info-box">
-<strong>TYPE</strong>
-<span>
-Friendly
-</span>
-</div>
-
-<div class="info-box">
-<strong>DATE</strong>
-<span>
-TBC
-</span>
-</div>
-
-<div class="info-box">
-<strong>VENUE</strong>
-<span>
-TBC
-</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-🏆 The Insider's Rankings
-</h2>
-
-<div class="insider-note">
-The Insider's Rankings are our five standout players from the match, rather than individual player ratings.
-</div>
-
-<div class="rankings">
-
-<div class="rank">
-<div class="rank-number">
-1
-</div>
-<div class="rank-player">
-Castagne
-</div>
-<div class="rank-note">
-Two assists
-</div>
-</div>
-
-
-<div class="rank">
-<div class="rank-number">
-2
-</div>
-<div class="rank-player">
-Sessegnon
-</div>
-<div class="rank-note">
-Standout performance
-</div>
-</div>
-
-
-<div class="rank">
-<div class="rank-number">
-3
-</div>
-<div class="rank-player">
-Iwobi
-</div>
-<div class="rank-note">
-Strong display
-</div>
-</div>
-
-
-<div class="rank">
-<div class="rank-number">
-4
-</div>
-<div class="rank-player">
-Palacios
-</div>
-<div class="rank-note">
-Impressive showing
-</div>
-</div>
-
-
-<div class="rank">
-<div class="rank-number">
-5
-</div>
-<div class="rank-player">
-Robinson
-</div>
-<div class="rank-note">
-Solid performance
-</div>
-</div>
-
-</div>
-
-</section>
-<!-- FULL STORY OVERLAY -->
-
-<div class="article-overlay" id="articleOverlay">
-
-    <div class="article-header">
-
-        <div class="article-header-inner">
-
-            <div class="article-logo">
-                THE FULHAM <span>INSIDER</span>
-            </div>
-
-            <button class="close-button" onclick="closeArticle()">
-                ✕ CLOSE
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <article class="article">
-
-        <div class="tag" id="articleTag">
-            THE FULHAM INSIDER
-        </div>
-
-        <h1 id="articleTitle">
-            Story
-        </h1>
-
-        <p class="article-intro" id="articleIntro">
-            Story information
-        </p>
-
-        <div class="meta" id="articleMeta">
-            THE FULHAM INSIDER
-        </div>
-
-        <div class="article-body" id="articleBody">
-        </div>
-
-        <a href="#" class="back-button" onclick="closeArticle(); return false;">
-            ← BACK TO THE INSIDER
-        </a>
-
-    </article>
-
 </div>
 
 
 <footer>
 
-    <div class="footer-logo">
-        THE FULHAM <span>INSIDER</span>
-    </div>
+<div class="footer-logo">
+THE FULHAM <span>INSIDER</span>
+</div>
 
-    <p>
-        Independent Fulham news, transfers and match coverage.
-    </p>
+<p>
+Independent Fulham news, transfers and match coverage.
+</p>
 
-    <p>
-        V8 • 2026/27
-    </p>
+<p>
+© 2026 The Fulham Insider
+</p>
+
+<button
+class="footer-complaint"
+onclick="openAuth('complaint')"
+>
+WRITE A COMPLAINT
+</button>
 
 </footer>
+<style>
+.article-overlay{
+position:fixed;
+inset:0;
+background:#f4f4f4;
+z-index:99999;
+overflow-y:auto;
+display:none;
+}
+
+.article-overlay.active{
+display:block;
+}
+
+.article-top{
+position:sticky;
+top:0;
+background:#fff;
+border-bottom:4px solid #d00000;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.article-brand{
+font-size:20px;
+font-weight:900;
+}
+
+.article-brand span{
+color:#d00000;
+}
+
+.close-story{
+background:#111;
+color:#fff;
+border:0;
+padding:10px 14px;
+border-radius:5px;
+font-size:9px;
+font-weight:900;
+}
+
+.article{
+max-width:850px;
+margin:auto;
+padding:50px 25px 80px;
+}
+
+.article h1{
+font-size:clamp(38px,6vw,62px);
+line-height:1;
+margin:15px 0;
+}
+
+.article-intro{
+font-size:18px;
+line-height:1.6;
+color:#666;
+}
+
+.article-body{
+margin-top:30px;
+font-size:16px;
+line-height:1.8;
+}
+
+.article-body h2{
+margin:30px 0 10px;
+}
+
+.article-body p{
+margin-bottom:15px;
+}
+
+.story-actions{
+display:flex;
+gap:10px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.story-actions button,
+.close-bottom,
+.footer-complaint{
+border:0;
+border-radius:5px;
+padding:12px 15px;
+font-size:9px;
+font-weight:900;
+}
+
+.story-actions button:first-child{
+background:#d00000;
+color:#fff;
+}
+
+.story-actions button:last-child,
+.footer-complaint{
+background:#eee;
+color:#111;
+}
+
+.close-bottom{
+margin-top:20px;
+background:#111;
+color:#fff;
+}
+
+.auth-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+z-index:100000;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.auth-overlay.active{
+display:flex;
+}
+
+.auth-box{
+background:#fff;
+width:100%;
+max-width:430px;
+padding:35px;
+border-radius:12px;
+position:relative;
+}
+
+.auth-close{
+position:absolute;
+right:15px;
+top:15px;
+border:0;
+background:transparent;
+font-size:20px;
+}
+
+.auth-box h2{
+font-size:30px;
+margin-bottom:8px;
+}
+
+.auth-subtitle{
+color:#777;
+font-size:13px;
+margin-bottom:22px;
+}
+
+.auth-box label{
+display:block;
+font-size:9px;
+font-weight:900;
+margin:12px 0 5px;
+}
+
+.auth-box input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.auth-submit{
+width:100%;
+margin-top:18px;
+padding:13px;
+border:0;
+border-radius:5px;
+background:#d00000;
+color:#fff;
+font-size:10px;
+font-weight:900;
+}
+
+.auth-switch{
+text-align:center;
+margin-top:18px;
+font-size:11px;
+color:#777;
+}
+
+.auth-switch button{
+border:0;
+background:none;
+color:#d00000;
+font-weight:900;
+}
+
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:40px 20px;
+}
+
+.footer-logo{
+font-size:20px;
+font-weight:900;
+margin-bottom:10px;
+}
+
+.footer-logo span{
+color:#d00000;
+}
+
+footer p{
+color:#999;
+font-size:10px;
+margin:6px 0;
+}
+
+.footer-complaint{
+margin-top:20px;
+}
+
+@media(max-width:650px){
+
+.header{
+flex-wrap:wrap;
+}
+
+.account-actions{
+width:100%;
+}
+
+.account-button{
+flex:1;
+}
+
+.grid3,
+.grid2{
+grid-template-columns:1fr;
+}
+
+.article{
+padding:35px 20px 60px;
+}
+
+}
+</style>
 
 
 <script>
 
-const stories = {
+const stories={
 
-    maddox: {
-        tag: "LATEST NEWS",
-        title: "Maddox Zaidan-Jones joins Fulham's U21s",
-        intro: "Fulham have added talented youngster Maddox Zaidan-Jones to their Under-21 group.",
-        meta: "LATEST NEWS • ACADEMY",
-        body: `
-            <h2>A new addition to the pathway</h2>
+maddox:{
+tag:"LATEST NEWS",
+title:"Maddox Zaidan-Jones joins Fulham's U21s",
+intro:"Talented youngster Maddox Zaidan-Jones has signed for Fulham's U21s.",
+meta:"LATEST NEWS • ACADEMY",
+body:`
+<h2>A new addition</h2>
+<p>
+Fulham have added talented youngster Maddox Zaidan-Jones
+to their Under-21 group.
+</p>
+<p>
+The move gives the youngster another opportunity to continue
+his development within Fulham's academy pathway.
+</p>
+`
+},
 
-            <p>
-                Fulham have added Maddox Zaidan-Jones to their U21 setup as the youngster continues his development.
-            </p>
+wan:{
+tag:"TRANSFER UPDATE",
+title:"Wan-Bissaka: Villa agree personal terms as Fulham remain interested",
+intro:"Aston Villa have agreed personal terms in principle with Aaron Wan-Bissaka, while Fulham remain interested.",
+meta:"TRANSFER NEWS • UPDATED",
+body:`
+<h2>Villa currently ahead</h2>
+<p>
+Aston Villa have agreed personal terms in principle with
+Aaron Wan-Bissaka, with negotiations continuing with West Ham.
+</p>
+<p>
+Fulham remain interested in the right-back, but the latest
+development means Villa currently appear to be ahead in the race.
+</p>
+<h2>Fulham's position</h2>
+<p>
+The Insider will continue to monitor the situation, but Fulham's
+status is listed as interest rather than ongoing negotiations.
+</p>
+`
+},
 
-            <p>
-                Zaidan-Jones is a midfielder and has represented the Turks and Caicos Islands at international level.
-            </p>
+fort:{
+tag:"STRONG INTEREST",
+title:"Fulham show strong interest in Héctor Fort",
+intro:"Fulham are monitoring Barcelona's young full-back.",
+meta:"TRANSFER NEWS • STRONG INTEREST",
+body:`
+<h2>Interest in Fort</h2>
+<p>
+Fulham are showing strong interest in Héctor Fort as the club
+continues to assess options at full-back.
+</p>
+<p>
+The Insider currently lists the situation as strong interest,
+rather than a completed deal or agreement.
+</p>
+`
+},
 
-            <p>
-                The move gives him the opportunity to continue his development within Fulham's academy structure.
-            </p>
-
-            <div class="sources">
-                <h3>SOURCES</h3>
-                <a href="https://www.espn.co.uk/football/player/_/id/391064/maddox-zaidan-jones" target="_blank">
-                    ESPN — Maddox Zaidan-Jones profile
-                </a>
-            </div>
-        `
-    },
-
-
-    wan: {
-        tag: "ONGOING TALKS",
-        title: "Fulham make offer for Aaron Wan-Bissaka",
-        intro: "Fulham are pursuing an initial loan move for West Ham right-back Aaron Wan-Bissaka.",
-        meta: "TRANSFER NEWS • ONGOING TALKS",
-        body: `
-            <h2>Fulham make an approach</h2>
-
-            <p>
-                Fulham are interested in bringing Aaron Wan-Bissaka to Craven Cottage, with TransferFeed reporting that the club have made an offer for an initial loan.
-            </p>
-
-            <p>
-                The proposed structure is being explored as a loan rather than an immediate permanent transfer. Earlier reporting has also pointed towards a possible loan-to-buy arrangement.
-            </p>
-
-            <p>
-                Wan-Bissaka brings significant Premier League experience and would provide another option at right-back.
-            </p>
-
-            <h2>The situation</h2>
-
-            <p>
-                This is not a confirmed transfer. Talks and negotiations can still change, so The Insider currently lists the situation as <strong>ONGOING TALKS</strong>.
-            </p>
-
-            <div class="sources">
-                <h3>SOURCES</h3>
-
-                <a href="https://www.transferfeed.com/transfers/aaron-wan-bissaka-west-ham-united-fulham/39105266" target="_blank">
-                    TransferFeed — Aaron Wan-Bissaka to Fulham
-                </a>
-
-                <a href="https://www.theguardian.com/football/2026/aug/12/football-transfer-rumours-folarin-balogun-to-tottenham-gabriel-jesus-to-napoli" target="_blank">
-                    The Guardian — Transfer rumours
-                </a>
-            </div>
-        `
-    },
-
-
-    fort: {
-        tag: "STRONG INTEREST",
-        title: "Fulham monitoring Héctor Fort",
-        intro: "Fulham are among the clubs interested in Barcelona defender Héctor Fort.",
-        meta: "TRANSFER NEWS • STRONG INTEREST",
-        body: `
-            <h2>Interest in the Barcelona defender</h2>
-
-            <p>
-                Fulham are monitoring Héctor Fort as they continue to assess options at full-back.
-            </p>
-
-            <p>
-                The 20-year-old Barcelona defender has been linked with a move away from the Catalan club, with Fulham among the sides reported to be interested.
-            </p>
-
-            <p>
-                The Guardian's latest transfer round-up also reports that Fulham like the look of Fort, who spent last season on loan at Elche.
-            </p>
-
-            <h2>The Insider's status</h2>
-
-            <p>
-                There is interest, but this is not a done deal. The Insider therefore lists Fort as <strong>STRONG INTEREST</strong> rather than ongoing negotiations or confirmed.
-            </p>
-
-            <div class="sources">
-                <h3>SOURCES</h3>
-
-                <a href="https://www.theguardian.com/football/2026/aug/12/football-transfer-rumours-folarin-balogun-to-tottenham-gabriel-jesus-to-napoli" target="_blank">
-                    The Guardian — Fulham and Héctor Fort
-                </a>
-            </div>
-        `
-    },
-
-
-    malaga: {
-        tag: "MATCH REPORT",
-        title: "Málaga 2–2 Fulham",
-        intro: "Fulham drew 2–2 with Málaga in pre-season.",
-        meta: "MATCH CENTRE • PRE-SEASON",
-        body: `
-            <h2>Fulham held to a draw</h2>
-
-            <p>
-                Fulham drew 2–2 with Málaga in their pre-season friendly.
-            </p>
-
-            <p>
-                From The Insider's own match observations, Timothy Castagne was one of Fulham's standout performers and produced two assists.
-            </p>
-
-            <h2>The Insider's Rankings</h2>
-
-            <p>
-                1. Castagne
-            </p>
-
-            <p>
-                2. Sessegnon
-            </p>
-
-            <p>
-                3. Iwobi
-            </p>
-
-            <p>
-                4. Palacios
-            </p>
-
-            <p>
-                5. Robinson
-            </p>
-
-            <h2>Match statistics</h2>
-
-            <p>
-                Possession: Málaga — / Fulham —
-            </p>
-
-            <p>
-                Shots: Málaga — / Fulham —
-            </p>
-
-            <p>
-                Shots on target: Málaga — / Fulham —
-            </p>
-
-            <p>
-                Official statistical data that we cannot verify is deliberately left blank rather than guessed.
-            </p>
-        `
-    },
-
-
-    shea: {
-        tag: "CONFIRMED",
-        title: "Shea Charles joins Fulham",
-        intro: "Fulham have completed the signing of midfielder Shea Charles.",
-        meta: "CONFIRMED TRANSFER",
-        body: `
-            <h2>Welcome to Fulham, Shea</h2>
-
-            <p>
-                Shea Charles has joined Fulham as the club continues to strengthen its midfield options.
-            </p>
-
-            <p>
-                The Northern Ireland international arrives with experience in English football and adds another option to the squad.
-            </p>
-
-            <p>
-                This transfer is listed as confirmed by The Insider.
-            </p>
-        `
-    },
-
-
-    gonzalo: {
-        tag: "CONFIRMED",
-        title: "Gonzalo García joins Fulham",
-        intro: "Fulham have brought Gonzalo García to the club from Real Madrid.",
-        meta: "CONFIRMED TRANSFER",
-        body: `
-            <h2>A new attacking option</h2>
-
-            <p>
-                Gonzalo García has joined Fulham from Real Madrid.
-            </p>
-
-            <p>
-                The forward arrives as part of Fulham's summer squad rebuild and gives the club another attacking option.
-            </p>
-
-            <p>
-                The Insider lists the move as confirmed.
-            </p>
-        `
-    },
-
-
-    palacios: {
-        tag: "CONFIRMED",
-        title: "César Palacios joins Fulham",
-        intro: "Fulham have added César Palacios to their midfield options.",
-        meta: "CONFIRMED TRANSFER",
-        body: `
-            <h2>Palacios arrives</h2>
-
-            <p>
-                César Palacios has joined Fulham from Real Madrid.
-            </p>
-
-            <p>
-                The midfielder becomes another young option in Fulham's developing squad.
-            </p>
-
-            <p>
-                The Insider lists the transfer as confirmed.
-            </p>
-        `
-    }
+malaga:{
+tag:"MATCH REPORT",
+title:"Málaga 2–2 Fulham",
+intro:"Fulham drew 2–2 with Málaga in pre-season.",
+meta:"MATCH CENTRE • FRIENDLY",
+body:`
+<h2>Fulham held to a draw</h2>
+<p>
+Fulham drew 2–2 with Málaga in their pre-season friendly.
+</p>
+<h2>The Insider's Rankings</h2>
+<p><strong>1. Castagne</strong> — two assists.</p>
+<p><strong>2. Sessegnon</strong></p>
+<p><strong>3. Iwobi</strong></p>
+<p><strong>4. Palacios</strong></p>
+<p><strong>5. Robinson</strong></p>
+<h2>Match statistics</h2>
+<p>Possession: Málaga — / Fulham —</p>
+<p>Shots: Málaga — / Fulham —</p>
+<p>Shots on target: Málaga — / Fulham —</p>
+<p>
+Statistics are left blank where verified figures are unavailable
+rather than guessing.
+</p>
+`
+}
 
 };
 
 
-function openArticle(storyId) {
+function openArticle(id){
 
-    const story = stories[storyId];
+const story=stories[id];
 
-    if (!story) {
-        return;
-    }
+if(!story)return;
 
-    document.getElementById("articleTag").textContent = story.tag;
+document.getElementById("articleTag").textContent=story.tag;
 
-    document.getElementById("articleTitle").textContent = story.title;
+document.getElementById("articleTitle").textContent=story.title;
 
-    document.getElementById("articleIntro").textContent = story.intro;
+document.getElementById("articleIntro").textContent=story.intro;
 
-    document.getElementById("articleMeta").textContent = story.meta;
+document.getElementById("articleMeta").textContent=story.meta;
 
-    document.getElementById("articleBody").innerHTML = story.body;
+document.getElementById("articleBody").innerHTML=story.body;
 
-    document.getElementById("articleOverlay").classList.add("active");
+const overlay=document.getElementById("articleOverlay");
 
-    document.body.style.overflow = "hidden";
+overlay.classList.add("active");
 
-    window.scrollTo(0, 0);
+overlay.scrollTop=0;
+
+document.body.style.overflow="hidden";
+
 }
 
 
-function closeArticle() {
+function closeArticle(){
 
-    document.getElementById("articleOverlay").classList.remove("active");
+document.getElementById("articleOverlay")
+.classList.remove("active");
 
-    document.body.style.overflow = "auto";
+document.body.style.overflow="auto";
+
 }
 
 
-document.addEventListener("keydown", function(event) {
+function resetAuth(){
 
-    if (event.key === "Escape") {
+document.getElementById("loginForm").style.display="none";
 
-        closeArticle();
+document.getElementById("registerForm").style.display="none";
 
-    }
+document.getElementById("commentForm").style.display="none";
+
+document.getElementById("complaintForm").style.display="none";
+
+}
+
+
+function openAuth(type){
+
+resetAuth();
+
+const overlay=document.getElementById("authOverlay");
+
+overlay.classList.add("active");
+
+document.body.style.overflow="hidden";
+
+if(type==="register"){
+
+showRegister();
+
+}
+
+else if(type==="comment"){
+
+document.getElementById("commentForm").style.display="block";
+
+}
+
+else if(type==="complaint"){
+
+document.getElementById("complaintForm").style.display="block";
+
+}
+
+else{
+
+showLogin();
+
+}
+
+}
+
+
+function closeAuth(){
+
+document.getElementById("authOverlay")
+.classList.remove("active");
+
+document.body.style.overflow="auto";
+
+}
+
+
+function showLogin(){
+
+resetAuth();
+
+document.getElementById("loginForm").style.display="block";
+
+}
+
+
+function showRegister(){
+
+resetAuth();
+
+document.getElementById("registerForm").style.display="block";
+
+}
+
+
+function demoLogin(){
+
+alert(
+"Real account login will be connected to the secure authentication system next."
+);
+
+}
+
+
+function demoRegister(){
+
+alert(
+"Real account creation will be connected to the secure authentication system next."
+);
+
+}
+
+
+document.getElementById("authOverlay")
+.addEventListener("click",function(e){
+
+if(e.target===this){
+
+closeAuth();
+
+}
 
 });
 
 
-const breakingStories = [
+document.addEventListener("keydown",function(e){
 
-    "Fulham have made an offer for Aaron Wan-Bissaka on an initial loan.",
+if(e.key==="Escape"){
 
-    "Maddox Zaidan-Jones joins Fulham's U21s.",
+closeArticle();
 
-    "Fulham are monitoring Héctor Fort.",
-
-    "Fulham draw 2–2 with Málaga."
-
-];
-
-let breakingIndex = 0;
-
-
-function showBreakingStory() {
-
-    const element = document.getElementById("breakingText");
-
-    if (!element) {
-        return;
-    }
-
-    element.textContent = breakingStories[breakingIndex];
+closeAuth();
 
 }
 
-
-function nextStory() {
-
-    breakingIndex++;
-
-    if (breakingIndex >= breakingStories.length) {
-        breakingIndex = 0;
-    }
-
-    showBreakingStory();
-
-}
-
-
-function previousStory() {
-
-    breakingIndex--;
-
-    if (breakingIndex < 0) {
-        breakingIndex = breakingStories.length - 1;
-    }
-
-    showBreakingStory();
-
-}
-
-
-showBreakingStory();
+});
 
 </script>
-
-
-<!-- CLOUDFLARE WEB ANALYTICS -->
-
-<script
-type="module"
-src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token": "e0a63b79e8264f1b863b1dd9b7192006"}'>
-</script>
-
-<!-- END CLOUDFLARE WEB ANALYTICS -->
 
 </body>
 </html>
